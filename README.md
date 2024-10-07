@@ -1,5 +1,3 @@
-Here’s a README.md based on your code:
-
 # 🇺🇸 VetsAI: Employment Assistance for Veterans
 
 VetsAI is an AI-powered virtual assistant designed to help veterans navigate employment transitions and find opportunities in civilian careers. The app allows users to interact via chat, upload resumes in PDF or DOCX format, and receive tailored assistance, such as translating military job codes to civilian job suggestions.
