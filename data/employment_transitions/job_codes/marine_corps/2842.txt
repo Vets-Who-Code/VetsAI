@@ -1,0 +1,6 @@
+Job Code: 2842
+
+Description:
+The EPLRS system specialist both operate and maintain the EPLRS enhanced downsized network control station (NCS-E(D).
+
+The EPLRS system specialist is trained to perform intermediate level maintenance on the NCS-E(D) through fault isolation, removal and replacement of faulty line replaceable units (LRU), and secondary replaceable units (SRU). They are also trained on the use of the TS-4118/G test set to enable them to troubleshoot the EPLRS radio sets (RS).

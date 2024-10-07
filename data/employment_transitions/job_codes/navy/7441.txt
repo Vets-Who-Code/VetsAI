@@ -1,0 +1,8 @@
+Job Code: 7441
+
+Description:
+Information Warfare Technician An officer of the Regular Navy whose permanent status is Warrant Officer.
+
+Supervises development and distribution of work schedules; Develops standard schedules for repeat-type work items and alterations; Aids shops in resolving scheduling conflicts; Analyzes workload and manpower requirements to maintain proper balance.
+
+Same as default tasks.

@@ -1,0 +1,10 @@
+Job Code: STS
+
+Description:
+Operates, troubleshoots, repairs, and performs maintenance on submarine sonar oceanographic and auxiliary sonar equipment; coordinates use of submarine sonar and underwater weapons control system; knows oceanographic aspects such as wave propagation in a fluid medium, with variables of temperature and pressure
+
+E4-E6; Able to perform the duties required for E1-E3;
+
+Performs operational tests and makes external adjustments on equipment; uses schematic and wiring/circuitry diagrams; troubleshoots and repairs; analyzes, tracks, records and reports data.
+
+E7-E9; Able to perform the duties required for E4-E6; Able to perform the duties required for STS1; supervises maintenance and repair of sonar equipment; repairs and calibrates electronic test equipment; trains and supervises personnel in the operation of sonar systems.

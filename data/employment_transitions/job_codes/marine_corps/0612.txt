@@ -1,0 +1,8 @@
+Job Code: 0612
+
+Description:
+The primary function of personnel holding this designation is to install, operate, and maintain wire/cable networks to link key outposts, control points, and headquarters with reliable paths for the transmission of telephone, facsimile, and data services. Additional responsibilities include installing and performing organizational maintenance on the AN/TTC-62 and AN/TTC-63 tactical telephone centers. The AN/TTC-62 Deployed End of Suite (DEOS) and AN/TTC-63 Remote Subscriber Access Module (RSAM) provide the voice services of the Transition Switch Module concept. These systems are computer-controlled nodes for multiple analog, Integrated Services Digital Network (ISDN), and Voice Over Internet Protocol (VOIP) trunks/lines. Typical duties of this MOS are installing and maintaining wire/cable/telephones/switches/media converters, adjusting equipment for proper operation, recovering wire/cable, and operating call service positions. Telephone Systems Installer/Maintainers may obtain the additional skills of installing/maintaining Unit Level Circuit Switches and Common Baseline Circuit Switches if deemed necessary to perform wire functions specific to a particular Fleet Marine Force unit.
+
+Maintain telephony networks, supervise cable plant installations, supervise installation of telephone sets, supervise installation of distribution services, supervise installation of telephony systems, supervise installation of telephony systems.
+
+Install cables/wires, distribution devices, patch panels, telephony switching systems, telephone sets, ancillary equipment, operate and maintain telephony systems, and maintain ancillary equipment.

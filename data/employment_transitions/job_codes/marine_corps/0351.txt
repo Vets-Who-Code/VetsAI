@@ -1,0 +1,6 @@
+Job Code: 0351
+
+Description:
+The infantry assault man employs rockets, the Anti-Personnel Obstacle Breaching System (APOBS), and demolitions. Assault men provide rocket fire against fortified positions in support of the rifle squads, platoons, and companies within the infantry battalion. Additionally, assaultmen employ APOBS, demolitions, and breaching/infiltration techniques to facilitate infantry maneuver in the offense, and demolitions and expedient counter mobility measures in the defense.
+
+Construct an electric initiation set; Construct a detonation cord firing-system; Construct a charge; Employ a charge; Employ mechanical breaching techniques; Construct a detonation cord oval charge; Construct a detonation cord linear charge; Construct a dual detonation cord firing-system.

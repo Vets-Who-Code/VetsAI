@@ -1,0 +1,10 @@
+Job Code: CTN
+
+Description:
+Possesses a combination of technical knowledge and analysis skills to fuse together information from various sources to provide the Operational Commanders with the situational awareness they will need to plan and execute information operation courses of action/counter-action.
+
+E7-E9; Able to perform the duties required for E4-E6; Serves as global network operations director; directs the monitoring, collecting, and reporting of information and conducts actions in direct support of computer network operations worldwide in support of Naval operating forces.
+
+Provide technical expertise in network-centric operations. Detect, protect, react and respond to threats against Navy networks. Defend against external and internal threats through in-depth technical and non-technical methods. Computer Network Risk Mitigation. Network Vulnerability Assessments and Incident Response/ Reconstruction. Active computer network defense, access tool development and computer/network forensics.
+
+E4-E6; Able to perform the duties required for E1-E3; Duties include network target development, indications and warning, attack sensing and warning, software analysis; serves as global network operations manager.

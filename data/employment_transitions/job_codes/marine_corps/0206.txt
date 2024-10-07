@@ -1,0 +1,8 @@
+Job Code: 0206
+
+Description:
+Signals intelligence/ground electronic warfare (SIGINT/EW) officers command and/or lead SIGINT/EW units in tactical information gathering operations and activities in support of identified collection requirements. SIGINT/EW officers advise commanders and staffs on the employment of SIGINT and EW assets in support of information gathering and information operations and activities.
+
+Direct Step 1 of the IPB Process; Define the operational environment/battlespace environment; Direct Step 2 of the IPB Process; Describe environmental effects on operations/describe the battlespace environment; Direct Step 3 of the IPB Process; Evaluate the threat/adversary; Direct Step 4 of the IPB Process; Determine threat/adversary courses of action; Estimate the situation; Synthesize all-source information; Conduct intelligence collection operations management
+
+Provide SIGINT support to IPB process; Conduct nodal analysis; Extract reportable COMINT information; Extract ELINT reportable information; Direct I&W reporting; Disseminate non-organic SIGINT reporting; Conduct SIGINT collection requirements management

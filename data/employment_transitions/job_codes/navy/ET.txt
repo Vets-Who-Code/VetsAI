@@ -1,0 +1,10 @@
+Job Code: ET
+
+Description:
+Performs maintenance on electronic equipment for surface ships, electronic air detection and tracking equipment, electronic recognition and identification equipment, aids to navigation, and electronic equipment and components used for communication, cryptography, and navigation; possesses a general working knowledge of electricity and electronics.
+
+E4-E6; Able to perform the duties of E1-E3; Reads and interprets schematics and block diagrams; uses test equipment and hand tools; repairs electrical/electronic cables and connectors; localizes malfunctions and repairs or replaces faulty parts or subassemblies.
+
+E1-E3; Maintain ship's compartments, decks, deck machinery, and equipment, external structure, lines and rigging; stand deck watches, such as helmsman, lookout and messenger watches underway; stand pier sentry, fire security, anchor, and other special watch duties.
+
+E7-E9; Able to perform the duties of E4-E6; Supervises the repair of electronic systems and subsystems; uses accounting procedures to maintain control of inventories, work flow, and work accomplished; estimates time and support required for repair of equipment.

@@ -1,0 +1,10 @@
+Job Code: 41F
+
+Description:
+Performs support and depot maintenance on projector equipment.
+
+Must know principles of alternating and direct current electricity and vacuum tube theory as applicable to circuits of photographic equipment; must know capacity, function, and limitations of components of amplifiers; must know techniques and procedures of malfunction diagnosis; must be able to select and use electric and electronic testing devices and apply results obtained to analysis of defective circuits and components of photographic equipment; must be able to read and interpret technical publications, circuit and schematic diagrams, and drawings pertaining to photographic and associated equipment; must be able to use electrician's hand tools.
+
+This MOS does not progress past E7.
+
+Must be qualified as Camera Repairman (41E20); Projector Repairman (41F20); or Surveillance Photographic Equipment Repairman (41G20); must know production line procedures used in depot maintenance of photographic equipment; must be able to read, interpret, and explain technical publications, diagrams, and drawings pertaining to photographic and associated equipment.

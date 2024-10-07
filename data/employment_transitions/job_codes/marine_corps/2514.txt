@@ -1,0 +1,6 @@
+Job Code: 2514
+
+Description:
+Operate and perform organizational maintenance on the Central Office AN/TTC-42.
+
+Typical duties include installing and interconnecting equipment, performing limited technical control of the voice/data network, and updating the database or crypto keys to ensure reliable, secure telephone service for the user.

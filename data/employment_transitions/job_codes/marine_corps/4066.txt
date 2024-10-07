@@ -1,0 +1,6 @@
+Job Code: 4066
+
+Description:
+Small Computer systems specialists ensure the proper installation, configuration, and operation of stand-alone and client- server information systems.
+
+Configure and define parameters for installation or testing of local area network (LAN), wide area network (WAN), hubs, routers, switches, controllers, multiplexers, or related networking equipment.

@@ -1,0 +1,8 @@
+Job Code: 0241
+
+Description:
+Imagery Analysis Specialists are accessed by lateral move from any MOS. They process and analyze imagery gathered by various sensor platforms to derive intelligence. They use photogrammetric skills to assist the commander in accurate target acquisition and perform reconnaissance mission planning for multi-mission, multi-source imagery reconnaissance.
+
+Conduct Imagery Analysis; Extract essential information from an Air Tasking Order; Confirm or deny orders of battle; Brief capabilities of imagery collection sensors and platforms; Brief capabilities of full motion video (FMV)collection sensors and platforms; Brief capabilities of Moving Target Indicator (MTI) collection sensors and platforms; Conduct intelligence briefs.
+
+Analyze Ground Moving Target Indicator (GMTI); Conduct Sensor Cross Cueing; Collaborate on a Mobility Corridor Study; Provide Imagery Intelligence (IMINT) indications and warning; Provide Battle Damage Assessment; Conduct coherent change detection analysis; Analyze Multi-Spectral Imagery (MSI); Analyze Hyper-Spectral Imagery (HSI)

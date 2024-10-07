@@ -1,0 +1,6 @@
+Job Code: 4069
+
+Description:
+Systems Programmers design and develop microcomputer application program and systems. The Marine also provides customer assistance in dealing with the products of computer programs; deletes or upgrades outdated systems, troubleshoots programs, loads and installs custom and commercial software, and maintain programmer libraries.
+
+Writing programs, Writing procedures (batch files), Installing custom and commercial software, Running custom and commercial software, Responds to software system/program failure, Maintaining software system libraries, Creating user system diskettes, Entering operator commands, Assists in instructing of small systems software functions.

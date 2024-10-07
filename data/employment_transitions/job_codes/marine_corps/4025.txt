@@ -1,0 +1,6 @@
+Job Code: 4025
+
+Description:
+Analyze, test, troubleshoot, and evaluate existing network systems, such as local area network (LAN), wide area network (WAN), and Internet systems or a segment of a network system.
+
+Analyze and report computer network security breaches or attempted breaches. Analyze network data to determine network usage, disk space availability, or server function. Back up network data. Configure and define parameters for installation or testing of local area network (LAN), wide area network (WAN), hubs, routers, switches, controllers, multiplexers, or related networking equipment. Configure security settings or access permissions for groups or individuals.

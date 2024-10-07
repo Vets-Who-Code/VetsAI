@@ -1,0 +1,6 @@
+Job Code: 9658
+
+Description:
+C3 systems officers coordinate the design, development, testing, evaluation, and operation of C3 systems.
+
+Supervises and coordinates design, development, testing, and evaluation of computerized C3 systems; Participates in development programs for C3 hardware and software elements; Prepares engineering data and documentation necessary for interfacing tactical command and control systems with allied or worldwide, joint C3 systems; Conducts design reviews necessary to upgrade and improveC3 systems; Develops test and evaluation criteria, including comprehensive test plans, for C3 systems.

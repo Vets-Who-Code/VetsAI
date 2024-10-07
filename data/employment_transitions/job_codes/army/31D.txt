@@ -1,0 +1,10 @@
+Job Code: 31D
+
+Description:
+Supervises and performs maintenance on MSE radio transmission equipment, radio access units, and radio interoperability devices.
+
+Plans, supervises and directs installation, operation, maintenance and management of MSE communication systems and networks, including interoperability interfaces; provides advice and makes recommendations to the commander and staff on all matters pertaining to enlisted personnel and their families; accompanies the commander on inspections and visits and at ceremonies; assists in inspection of command activities facilities and personnel as prescribed by the commander; holds First Sergeants' or Sergeants' Major call to announce information and instructions; insures that newly assigned enlisted personnel are instructed in military courtesy, customs of the service, and command regulations or policies; provides counsel and guidance to NCOs and other enlisted personnel of the command; inspects duties performed by subordinate NCOs; notes discrepancies and initiates appropriate corrective action; assists in reception of visitors to the command; sits as president or member of command promotion board for NCOs, as authorized by regulations; performs other duties prescribed by the commander.
+
+Installs, operates, and performs unit level maintenance on MSE radio transmission equipment, to include; Line-of-sight multichannel radio terminals; radio access units (RAU); down-the-hill radios; associated multiplexing equipment; associated antenna systems; COMSEC devices; operates and performs PMCS on assigned vehicles and power generation equipment; installs, operates maintains or supervises MSE radio transmission and associated equipment operations; supervises the installation, operation and unit level maintenance of MSE transmission systems.
+
+Plans, supervises, coordinates and provides technical assistance in the installation, operation, maintenance, and management of MSE communication systems and networks; plans, supervises and directs installation, operation, maintenance and management of MSE communication systems and networks, including interoperability interfaces.

@@ -1,0 +1,8 @@
+Job Code: 0628
+
+Description:
+The EHF satellite communications operator-maintainer MOS identifies Marines who emplace, interconnect, energize, and verify the operation of EHF satellite terminal equipment (currently the SMART-T satellite system).
+
+Create a satellite communications section Bill of Materials (BOM), conduct a site survey, perform proper generator power up procedures, operate a High Mobility Multi-Wheeled Vehicle, (HMMWV) with attached trailer.
+
+Install and operate a SMART-T (Secure Mobile Anti-jam Reliable Tactical Terminal).

@@ -1,0 +1,10 @@
+Job Code: OTM
+
+Description:
+Performs preventive maintenance, troubleshooting, and repair on all operational systems (containing both analog and digital equipment including digital computer) used by Ocean Systems Technicians.
+
+E7-E9; Able to perform the duties required for E4-E6; Supervises the training of personnel in the maintenance and repair of oceanographic/acoustic equipment; administers a maintenance and repair program; prepares written instructions and correspondence.
+
+Repairs and performs maintenance on several operational systems; uses basis test equipment, schematics, and instruction manuals to troubleshoot electronic equipment.
+
+E4-E6; Able to perform the duties required for E1-E3;

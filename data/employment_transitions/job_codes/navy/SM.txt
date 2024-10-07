@@ -1,0 +1,10 @@
+Job Code: SM
+
+Description:
+Sends and receives messages by flashing light, semaphore, and flag hoist; stands watch on the signal bridge; performs lookout duties; encodes and decodes messages; maintains visual signal equipment; recognizes visual aids to navigation such as beacons and buoys; takes bearings.
+
+(E7-E9) Able to perform the duties of E4-E6; Prepares quarterly schedules of preventive maintenance; posts changes to ship equipment configuration accounting system; administers command security education programs; performs duties of tactical communications.
+
+(E4-E6) Able to perform the duties of E1-E3;
+
+Uses and recognizes flag, light, international distress, emergency, and storm warning signals; selects and displays flags and pennants; receives, sends, and handles routine messages according to precedence.

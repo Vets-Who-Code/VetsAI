@@ -1,0 +1,6 @@
+Job Code: 5900
+
+Description:
+The 5900 electronics maintenance OccFld maintains, operates and repairs organic communication and electronic equipment within the Marine Air Command and Control Systems (MACCS), Marine Aircraft Wings.
+
+Electronics maintenance technicians are qualified to perform complex diagnosis, repairs, and modifications to ground data/communications equipment.

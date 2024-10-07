@@ -1,0 +1,10 @@
+Job Code: 05K
+
+Description:
+Performs the duties of intercepting, identifying, and recording foreign radioteletype, facsimile, and data communications transmissions in fixed or tactical environment.
+
+Holds First Sergeants' or Sergeants' Major call to announce information and instructions; insures that newly assigned enlisted personnel are instructed in military courtesy, customs, of the service, and command regulations or policies; provides counsel and guidance to NCOs and other enlisted personnel of the command; inspects duties performed by subordinate NCOs; notes discrepancies and initiates appropriate corrective action; assists in reception of visitors to the command; sits as president or, member of command promotion board for NCOs, as authorized by regulations; performs other duties prescribed by, the commander.
+
+Supervises non-Morse intercept activities and interprets SIGINT tasking and collection priorities.
+
+Operates radioteletype, facsimile, and data intercept and recording equipment; operates non-Morse intercept and associated equipment, assists in the establishment of operational sites, and maintains the technical data base in support of collection operations; supervises non-Morse intercept activities and allocates collection resources per mission priorities.

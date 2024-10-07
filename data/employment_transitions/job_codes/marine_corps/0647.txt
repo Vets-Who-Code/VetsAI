@@ -1,0 +1,6 @@
+Job Code: 0647
+
+Description:
+The PLRS master station operator utilizes the capabilities of the position Location Reporting System (PLRS) central facility to locate and report on the movement and status of friendly forces equipped with PLRS user units.
+
+Duties include emplacing and interconnecting equipment, performing diagnostic procedures on the system, setting frequencies and security codes, and performing operator maintenance.

@@ -1,0 +1,6 @@
+Job Code: 6414
+
+Description:
+Aircraft communications/navigation/cryptographic systems technicians at the IMA inspect, test, maintain, and repair weapon replaceable assemblies, shop replaceable assemblies, and ancillary equipment whose aggregate constitutes a complete aircraft communications, navigation, or cryptographic system beyond normal fault isolation procedures
+
+Inspect weapon replaceable assemblies, shop replaceable assemblies, and ancillary equipment whose aggregate constitutes a complete aircraft communications, navigation, or cryptographic system beyond normal fault isolation procedures; Test weapon replaceable assemblies, shop replaceable assemblies, and ancillary equipment whose aggregate constitutes a complete aircraft communications, navigation, or cryptographic system beyond normal fault isolation procedures; Maintain weapon replaceable assemblies, shop replaceable assemblies, and ancillary equipment whose aggregate constitutes a complete aircraft communications, navigation, or cryptographic system beyond normal fault isolation procedures; Repair weapon replaceable assemblies, shop replaceable assemblies, and ancillary equipment whose aggregate constitutes a complete aircraft communications, navigation, or cryptographic system beyond normal fault isolation procedures

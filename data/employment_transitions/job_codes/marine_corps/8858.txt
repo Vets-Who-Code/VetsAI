@@ -1,0 +1,6 @@
+Job Code: 8858
+
+Description:
+C41 systems officers coordinate the design, development, testing, evaluation, and operation of C41 systems.
+
+Performs advanced systems installation, operation, integration, and troubleshooting in order to maintain optimum secure data communications systems; They plan and supervise the installation, configuration, and maintenance of all data communications systems and network services, in both a garrison and deployed environment; plan and design local and wide area networks and link heterogeneous networks through the application of appropriate data and telecommunications hardware and software;

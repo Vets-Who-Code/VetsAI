@@ -1,0 +1,6 @@
+Job Code: 6042
+
+Description:
+Individual material readiness list asset managers manage Individual Material Readiness List (IMRL) asset inventories on Local Asset Management Systems (LAMS), as set forth by the Naval Aviation Maintenance program (NAMP) and the Aircraft Maintenance Material Readiness List (AMMRL) Program at IMRL program reporting activities.
+
+Manage Individual Material Readiness List (IMRL) asset inventories on Local Asset Management Systems (LAMS); Manage IMRL assets at the organizational and immediate levels of maintenance, aviation wings, and Support Equipment Controlling Authorities (SECA); Conduct, reconcile, and report IMRL assets inventories; Acquire and dispose of IMRL assets; Train subordinate IMRL asset managers; Conduct liaison with other SECAs

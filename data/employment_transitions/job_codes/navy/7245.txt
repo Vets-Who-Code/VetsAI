@@ -1,0 +1,8 @@
+Job Code: 7245
+
+Description:
+Repair Technician (Submarine). An officer of the Naval Reserve.
+
+Furnishes design and test engineering services for propulsion and heat exchange equipment, including main engines, turbines, bearings, reduction gears, shafting, propellers, auxiliaries, boilers, condensers, distilling plants, pumps, blowers, refrigerating plants.
+
+Same as default tasks.

@@ -1,0 +1,8 @@
+Job Code: 0650
+
+Description:
+Network operations and systems officers supervise and manage the security, planning, and operation of Information Technology (IT) Systems. With a primary focus in the functional areas of Internet Protocol based Local and Wide Area Networks, they plan and supervise the installation and management of IT systems. They provide technical direction in conjunction with the overall communications control effort relating to the security, installation and performance of IT systems within MAGTF, Joint, and coalition networks.
+
+Manage strategic C4 programs, operations and actions; Manage a CNO plan; Obtain Information Assurance Management (IAM) Level I certification; Obtain Information Assurance Management (IAM) Level II certification; Obtain Information Assurance Management (IAM) Level III certification; Write CNO documentation; Manage CNO commodity section operational readiness; Manage strategic CNO activities; Manage Information Technology program
+
+Plan a data network; Develop a Cyberspace Network Operations (CNO); Design a CNO plan; Design a data network; Engineer a Data Network Architecture; Manage data network operations commodity section operational readiness; Manage Information Technology (IT) projects

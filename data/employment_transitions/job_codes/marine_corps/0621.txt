@@ -1,0 +1,8 @@
+Job Code: 0621
+
+Description:
+Field radio operators employ radio to send and receive messages. Typical duties include the set up and tuning of radio equipment including antennas and power sources; establishing contact with distant stations; processing and logging of messages; making changes to frequencies or cryptographic codes; and maintaining equipment at the first echelon.
+
+Create a radio section bill of materials, develop a magtf radio communications plan, construct field expedient antennas, operate radio system with advanced configurations, operate an enhanced position location reporting system radio, operate commercial satellite communications terminal, perform advanced operations of a data transfer device
+
+Operate a tactical radio, operate a tactical radio remoting device, operate a global positioning system, conduct preventative maintenance checks and services pmcs on radio equipment.

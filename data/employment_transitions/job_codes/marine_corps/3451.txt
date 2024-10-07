@@ -1,0 +1,8 @@
+Job Code: 3451
+
+Description:
+Financial management resource analysts perform accounting, budgeting and all other financial management relevant duties for appropriated funds supporting the operating forces and supporting establishments. Financial management resource analyst perform duties specifically pertain to maintenance, monitoring, reconciliation and preparation of official accounting records; general ledger control; related cost accounting; financial systems analysis and any oversight duties typically performed by related cost accounting organizations.
+
+Construct a Line of Accounting (LOA); Construct a Document Number; Construct a Financial Information Pointer (FIP); Process Accounting Transactions into Standard Accounting Budgeting and Reporting System (SABRS); Maintain Local Tables in the Standard Accounting Budgeting and Reporting System (SABRS); Input Financial Data into PR Builder; Input Lines of Accounting into the Defense Travel System (DTS)
+
+Maintain Correspondence Files and Directives; Recommend Financial Management Policy/Guidance; Perform Budget Execution Analysis; Perform Fund Administrator Training; Reconcile Pre-validation Report; Validate Fiscal Year Closeout; Conduct Financial Management Sustainment Training

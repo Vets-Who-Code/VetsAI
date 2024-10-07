@@ -1,0 +1,6 @@
+Job Code: 4067
+
+Description:
+ADA programmers prepare and write ADA systems adhering to the fundamental concepts associated with software engineering. In addition, they provide customer assistance in dealing with ADA programs, troubleshoot programs, load software, and maintain programmer libraries.
+
+Writing programs, Writing procedures (batch files), Installing custom and commercial software, Running custom and commercial software, Responds to software system/program failure, Maintaining software system libraries, Creating user system diskettes, Entering operator commands, Assists in instructing of small systems software functions.

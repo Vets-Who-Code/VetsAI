@@ -1,0 +1,8 @@
+Job Code: 0210
+
+Description:
+Counterintelligence human source intelligence operations officers are the technical experts on planning and executing CI and HUMINT operations and activities. They function as advisors to commanders and staffs concerning the application of CI and HUMINT resources as well as assist the force protection efforts of the parent command across the full spectrum of military operations.
+
+Task CI/HUMINT Collectors; Direct Surveillance Operations; Direct counter surveillance; Direct Non-networked Technical CI/HUMINT Activities; Direct debriefing operations; Supervise CI/HUMINT information/intelligence dissemination; Supervise CI/HUMINT Garrison Activities
+
+Integrate all-source information to support CI/HUMINT activities; Determine terrain effects on CI/HUMINT operations; Determine human terrain effects on CI/HUMINT activities; Determine threat effects on CI/HUMINT activities; Manage Operational Funds; Manage CI/HUMINT intelligence collection effort; Produce a request for information (RFI)

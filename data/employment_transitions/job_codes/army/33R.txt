@@ -1,0 +1,10 @@
+Job Code: 33R
+
+Description:
+Supervises or performs maintenance on fixed wing and heliborne aviation systems, equipment and assemblies.
+
+Serves as the principal maintenance CO in a fixed station or depot Electronic Warfare/Intercept (EW/I) fixed stations or depots to include; EW/I receiving subsystems repairer; EW/I processing/storage subsystem repairer; EW/I systems analyst and command/control subsystems repairer; EW/I aviation systems repairer; EW/I tactical systems repairer; unit supply and repair parts specialist; teletypewriter repairer; antenna repairer/installer; clerks.
+
+Supervises and performs unit, intermediate and depot maintenance on tactical and aviation systems and equipment and other assigned communications-electronics equipment; serves as the principal maintenance CO in a fixed station or depot Electronic Warfare/Intercept (EW/I) fixed stations or depots to include; EW/I receiving subsystems repairer; EW/I processing/storage subsystem repairer; EW/I systems analyst and command/control subsystems repairer; EW/I aviation systems repairer; EW/I tactical systems repairer; unit supply and repair parts specialist; teletypewriter repairer; antenna repairer/installer; clerks.
+
+Performs unit, intermediate and depot maintenance on aviation equipment including; high, ultra high and microwave frequency receivers; narrowband recorder-reproducers; tactical antennas, antenna control units and radio frequency switches; modulators and demodulators, multiplexers and demultiplexers; signal monitors and other display equipment; direction finding and electronic countermeasures equipment; performs unit level maintenance on intercept systems; direction finding systems; electronic countermeasures systems; computer peripheral devices; perform maintenance on aviation systems and associated computers.

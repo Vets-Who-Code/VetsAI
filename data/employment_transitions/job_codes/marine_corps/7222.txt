@@ -1,0 +1,6 @@
+Job Code: 7222
+
+Description:
+Trained to provide air support, air control, or antiaircraft missile units.
+
+Tactical employment of air support, air control, or antiaircraft missile units. Control of aircraft in intercept of hostile aircraft and coordinates antiaircraft missile unit's fire with other missile units and with designated air control units.

@@ -1,0 +1,6 @@
+Job Code: 2533
+
+Description:
+Operates and keeps in repair equipment used in radiotelegraph communications.
+
+Watches frequency lights on receiver to ascertain if station is being called. Snaps toggle switch that sets receiver to frequency when call is indicated. Opens circuit and manipulates key to acknowledge call. Listens to telegraph signal, types message on form, and relays it to addressee by telephone or teletype. Manipulates key to call ships or stations by code, and to send messages after acknowledgment. Monitors emergency frequency for distress calls, and Conelrad as required by regulations. Performs routine repairs and maintenance, such as changing tubes, resistors, and transmitters.

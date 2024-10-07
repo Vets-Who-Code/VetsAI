@@ -1,0 +1,8 @@
+Job Code: 0341
+
+Description:
+Mortarmen are responsible for the tactical employment of the 60mm light mortar and the 81mm medium mortar. Mortarmen provide indirect fire in support of the rifle and LARS quads/platoons/companies and. the infantry and LAR battalions. They are located in the weapons platoons of the rifle and LAR companies and the weapons company of the infantry battalion. Noncommissioned officers are assigned as mortar gunners.
+
+Emplace a mortar section/platoon (D), Employ a 60mm mortar section in support of company operations (D), Employ an 81mm mortar section/platoon in support of battalion operations (D), Fire standard missions as a mortar section/platoon (B), Fire special missions as a mortar section/platoon (B)
+
+Emplace an assault squad, Employ an assault squad in support of offensive operations, Employ an assault squad in support of defensive operations, Employ an assault squad in support of platoon urban operations, Emplace an anti-armor squad (D), Employ an anti-armor squad in support of offensive operations.

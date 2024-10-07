@@ -1,0 +1,8 @@
+Job Code: 0689
+
+Description:
+Computer defense specialists are responsible for all aspects of ensuring Marine Corps information systems data availability, integrity authentication, confidentiality, and non-repudiation. Information assurance technicians implement and monitor security measures for USMC communication information systems networks, and advise the commander that systems and personnel adhere to established security standards and governmental requirements for security on these systems. Duties include assisting in the development and execution of security policies, plans, and procedures; design and implementation of data network security measures; network intrusion detections and forensics; information system security incident handling; and certification of Marine Corps systems and networks. Entry level input to this MOS will be in the grade of sergeant through staff sergeant only with a PMOS of 0651, 0656, or 0659 on second or subsequent enlistment.
+
+Determine Information Assurance program requirements Determine Information Assurance architecture requirements Develop an Information Assurance program Draft an Information Assurance plan Draft an Information Assurance architecture Develop an Information Assurance plan Implement non-technical Information Assurance Controls Perform a certification and accreditation process Conduct non-technical Information Assurance assessment Supervise an Information Assurance program Enforce Information Assurance plan
+
+Implement technical Information Assurance controls Administer technical Information Assurance controls Conduct technical Information Assurance assessment Maintain technical Information Assurance controls

@@ -1,0 +1,10 @@
+Job Code: CTM
+
+Description:
+Perform preventive and corrective maintenance on electrical and electronic cryptologic and ancillary systems used for communications, analysis, monitoring, tracking, recognition and identification, electronic attack, and physical security.
+
+E7-E9; Able to perform the duties required for E4-E6; Evaluates operational test results against engineering design standards on electronic systems; supervises and evaluates subordinates; prepares written evaluation reports.
+
+Perform hardware and software isolation and repair of state-of-the-art electronic, computer and network equipment and related systems using complex test and analysis equipment, diagnostic software, hand tools and technical publications; perform computer and electronic system hardware and software installation, configuration and modification; analyze the configuration and monitor the operation of computer telecommunications and networking systems; calibrate and repair a wide variety of precision electronic test equipment; perform information security and computer network defense functions for secure networks and communication systems; maintain fleet cryptologic permanent and carry-on direct support systems required in special land, sea surface and subsurface operations.
+
+E4-E6; Able to perform the duties required for E1-E3; Applies theory of basic electronics to fundamental electronic systems, including use of test equipment and troubleshooting cryptologic equipment; performs digital logic circuit troubleshooting.

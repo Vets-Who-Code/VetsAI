@@ -1,0 +1,6 @@
+Job Code: 0847
+
+Description:
+Artillery meteorological men assist in the delivery of accurate artillery fire by observing weather conditions and computing and distributing weather data for use in field artillery and mortar fire control. Duties include preparing weather observation equipment, measuring surface observations, obtaining atmospheric readings at various altitudes by pilot balloon observations, radiosonde soundings, and numerical meteorological modeling.
+
+Emplace the meteorological measuring set (MMS) shelter; Power up/down the meteorological measuring set (MMS); Enter radiosonde calibration data into the Marwin processor; Establish digital communications; Prepare equipment for electronic flight; Determine and record surface data; Determine and record surface data using the AN/TMQ-55 Surface Met Sensor; Set up, level, and orient an Electronic Mechanical Meteorological Theodolite (EMMT); Perform tracking with an Electronic Mechanical Meteorological Theodolite (EMMT).

@@ -1,0 +1,6 @@
+Job Code: 2877
+
+Description:
+Lay out, build, test, troubleshoot, repair, and modify developmental and production electronic components, parts, equipment, and systems.
+
+Adjust or replace defective or improperly functioning circuitry or electronics components, using hand tools or soldering iron. Assemble, test, or maintain circuitry or electronic components, according to engineering instructions, technical manuals, or knowledge of electronics, using hand or power tools. Build prototypes from rough sketches or plans. Design basic circuitry and draft sketches for clarification of details and design documentation under engineers' direction, using drafting instruments or computer-aided design (CAD) equipment. Develop or upgrade preventative maintenance procedures for components, equipment, parts, or systems.

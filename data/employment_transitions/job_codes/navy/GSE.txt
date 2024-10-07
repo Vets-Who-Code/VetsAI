@@ -1,0 +1,10 @@
+Job Code: GSE
+
+Description:
+Operate, repair, and perform organizational and intermediate maintenance on electrical components of gas turbine engines, main propulsion machinery, auxiliary equipment, prolusion control systems, assigned electrical and electronic circuitry up to the printed circuit, and alarm and warning circuitry.
+
+E4-E6; Able to perform the duties required for E1-E3; Adjusts indicating micro switches; determines fuel tank level; disposes of Hazardous Material (HAZMAT); documents meter readings; inspects fluid samples; inspects HAZMAT storage areas. Maintains air conditioning systems.
+
+E1-E3; Stands engineering watches; clean engineering spaces and equipment; make minor repairs to engineering equipment; record readings of gages; participate in general drills; function as a member of a fire fighting team; and performs general detail duties.
+
+E7 only, converts to GSCS at E8; Able to perform the duties required for E4-E6; updates Engineer's bell logs; reviews engineering and equipment degradations; provides technical administration, leadership, project management and communications to gas turbines.

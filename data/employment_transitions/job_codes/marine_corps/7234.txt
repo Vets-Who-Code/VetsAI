@@ -1,0 +1,8 @@
+Job Code: 7234
+
+Description:
+Air command and control electronics operators perform duties incident to the operation of tactical air command and control systems and supervise and participate in the movement, emplacement, cabling, orientation, and operation of tactical air command and control systems. Operators are capable of filling any operational billet appropriate to grade in MACS, TACC, or MACG headquarters.
+
+Emplaces, adjusts, operates, and performs first echelon maintenance on air command and control electronic equipment, shelters, status boards, plotting boards, and other associated equipment; Plots position, course, bearing, and speed of aircraft from a plan position indicator; Plots and converts polar and XY coordinates and the various grid systems; Records data on required status and plotting boards; Maintains operations logs; Acquires and identifies aircraft returns from radar reports; Assists in tracking aircraft; Assists GCI controllers in performing air intercepts; Conducts flight following of aircraft; Provides navigational assistance; Operates, observes, and reports the readings of various electronics equipment in a clear and an electronic countermeasures environment; Sends, receives, and relays information, requests, and instructions over communications nets.
+
+Supervises and participates in preparation of system equipment for movement and combat; Supervises construction and camouflage of protected positions; Directs and supervises the training of air control personnel attached to the unit to which assigned.

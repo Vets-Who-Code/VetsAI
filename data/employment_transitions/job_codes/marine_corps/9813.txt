@@ -1,0 +1,6 @@
+Job Code: 9813
+
+Description:
+Operates GCS sensor during all phases of deployment.
+
+Operates GCS sensor during all phases of deployment.

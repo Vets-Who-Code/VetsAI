@@ -1,0 +1,10 @@
+Job Code: PN
+
+Description:
+Performs enlisted personnel administration duties.
+
+(E4-E6) Able to perform the duties of E1-E3;
+
+Performs routine office functions; maintains files; performs receptionist duties; prepares and maintains personnel records; operates office equipment; keys reports and correspondence at 45 words per minute.
+
+(E7-E9) Able to perform the duties of E4-E6; Supervises and trains personnel in classification procedures; serves as office manager; interprets and analyzes manpower authorizations; supervises the preparation and transmittal of documents.

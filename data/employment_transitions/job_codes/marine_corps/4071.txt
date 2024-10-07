@@ -1,0 +1,6 @@
+Job Code: 4071
+
+Description:
+Administer, test, and implement computer databases, applying knowledge of database management systems.
+
+Approve, schedule, plan, and supervise the installation and testing of new products and improvements to computer systems such as the installation of new databases.   Develop data model describing data elements and how they are used, following procedures and using pen, template or computer software. Develop methods for integrating different products so they work properly together such as customizing commercial databases to fit specific needs. Develop standards and guidelines to guide the use and acquisition of software and to protect vulnerable information. Establish and calculate optimum values for database parameters, using manuals and calculator.

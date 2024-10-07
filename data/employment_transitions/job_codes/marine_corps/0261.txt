@@ -1,0 +1,6 @@
+Job Code: 0261
+
+Description:
+Geographic intelligence specialists collect, analyze, and process geophysical data. They perform precision ground control survey operations to provide the positional data required for various weapons delivery and C3 systems, construct and revise military maps and charts, conduct geodetic, topographic, and hydrographic survey operations, and analyze terrain and hydrography as a functional aspect of military intelligence.
+
+Conduct Combined Obstacles Overlay Analysis; Conduct Concealment Analysis; Conduct Cover Analysis; Conduct Cross Country Movement Analysis; Conduct Line of Sight Analysis; Conduct Lines of Communication Analysis; Conduct Manmade Features Analysis; Conduct Multispectral Imagery Analysis

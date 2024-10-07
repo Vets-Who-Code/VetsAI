@@ -1,0 +1,6 @@
+Job Code: 2881
+
+Description:
+The MOS is retained for administrative purposes only and is no longer assigned. 2M/ATE technicians perform repairs on tactical and non-tactical circuit cards characterized by the presence of surface mount components, highly static sensitive components, and multi-lead devices.
+
+Duties include developing diagnostic test routines (silver disks/gold disks); using automatic test equipment as part of the diagnostic process; and performing complex miniature and micro-miniature soldering using an MK-2663/U soldering station; evacuation/disposition of unrepairable circuit cards; completing requisitions, deadline reports, and other documentation.

@@ -1,0 +1,6 @@
+Job Code: 0600
+
+Description:
+Basic Communications Marines includes design, installation, interconnection, and operation of communication networks and information systems used to transmit information and data.
+
+Marines in this field operate and perform preventive maintenance on both hardware and software systems; including telephone, teletype, switching, radio, cryptographic, and computer systems, which are essential links in the overall functions of communication.

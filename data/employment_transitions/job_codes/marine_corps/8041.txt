@@ -1,0 +1,6 @@
+Job Code: 8041
+
+Description:
+Colonel, ground, are officers in the grade of colonel. This title and MOS will also be used to identify colonel ground billets in T/Os.
+
+Colonel, ground, are officers in the grade of colonel; This title and MOS will also be used to identify colonel ground billets in T/Os

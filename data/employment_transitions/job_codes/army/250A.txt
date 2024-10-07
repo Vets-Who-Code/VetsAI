@@ -1,0 +1,10 @@
+Job Code: 250A
+
+Description:
+Manages personnel, equipment, and facility operations of telecommunications and communications security activities.
+
+Performs duties in preceding skill levels; provides guidance and technical direction to subordinate operating.
+
+Manages personnel, equipment, and facility assets for the operation of telecommunications and communications security activities; provides guidance and technical direction to subordinate operating telecommunication equipment; supervises personnel operating COMSEC equipment; ensures compliance with operational, administrative activities and assigns work to subordinates; plans, supervises and conducts training in all phases of telecommunications center and COMSEC operations; ensures proper communications discipline; supervises operation of COMSEC inventory control facilities; manages COMSEC procurement actions; develops new equipment fielding plans and O&O concepts, and manages COMSEC material distribution; assists units in the development of language for low level cryptosystems; acts as COMSEC advisor to the commander; develops operating procedures and analyzes and interprets technical data employed in the operation of AUTODIN switching centers; ensures compliance with applicable security regulations; assumes responsibility for the COMSEC account.
+
+Performs duties in preceding skill levels; oversee the MOS life cycle management for all personnel proponent functions for all Signal Corps warrant officer MOS.

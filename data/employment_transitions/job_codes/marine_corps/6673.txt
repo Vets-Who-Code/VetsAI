@@ -1,0 +1,6 @@
+Job Code: 6673
+
+Description:
+AIS computer operators are able to operate and perform preventative maintenance on the current aviation logistics computer system and associated peripheral equipment, and have a working knowledge of Naval Tactical Command Support System (NTCSS).
+
+They must be able to perform technical analysis and file analysis programming; analyze and evaluate system output; design and manipulate data base information to produce non-routine reports; have a basic working knowledge of computer programming, application programs, and software in order to access and manage data stored in the computer's memory or data base file(s). Administrative tasks include but are not restricted to developing a monthly data processing schedule and maintaining a magnetic tape or other storage device library.

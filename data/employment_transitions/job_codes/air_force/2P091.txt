@@ -1,0 +1,10 @@
+Job Code: 2P091
+
+Description:
+Performs and manages repair, calibration, and modification of test, measurement, and diagnostic equipment (TMDE), including precision measurement equipment laboratory (PMEL) standards and automatic test equipment. Supervises the process and use of TMDE to perform voltage, current, power, impedance, frequency, microwave, temperature, physical-dimensional, and optical measurements.
+
+Inspects, aligns, troubleshoots, and repairs PMEL standards, common and weapon system peculiar TMDE. Inspects TMDE for preventive maintenance, cleanliness, and safety requirements. Performs equipment maintenance using theories of operation, block diagrams, schematics, logic trees, and software diagnostics. Isolates malfunctions to component level. Calibrates and certifies TMDE to technical data specifications ensuring traceability to Air Force Reference Standards. Records and reports maintenance data; prepares technical order improvement reports, special training requests, training quality reports, and modification proposals. Tracks equipment warranties. Provides training and manages technical order distributions. Handles, labels, and disposes of hazardous materials and waste according to environmental standards.  Plans, organizes, and coordinates mission support requirements. Collects and analyzes maintenance data and performs trend analysis. Identifies mission essential TMDE and its impact on workload. Coordinates lateral support, command certification, or contract services. Evaluates procedures for storage, inventory, and inspection of property. Provides training and assistance to TMDE users. Maintains PMEL automated management systems (PAMS). Develops and evaluates workload plans, budget, and support agreements. Manages PMEL quality program (QP). Submits reports to higher headquarters, maintains a safe working environment, and ensures laboratory certification.
+
+Same as junior tasks.
+
+Experience Managing individuals

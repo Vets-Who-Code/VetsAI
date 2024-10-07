@@ -1,0 +1,6 @@
+Job Code: 0610
+
+Description:
+Telephone systems officers supervise and coordinate the planning, installation, operation, and maintenance for our tactical voice switching common user network and special subscriber terminal employment within a MAGTF, including external connectivity to joint and national systems, and our supporting establishment infrastructure for voice, data, and video services.
+
+Write a Major Subordinate Command (MSC) Telephone Network Plan, Write a Marine Expeditionary Force (MEF) Telephone Network Plan, Integrate a Telephone Network Plan (TNP) architecture for a Major Subordinate Command (MSC) in support of Annex K development, Write Telephone Network Plan (TNP) engineering documents for Marine Expeditionary Force

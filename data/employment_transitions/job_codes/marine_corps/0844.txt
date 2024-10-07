@@ -1,0 +1,6 @@
+Job Code: 0844
+
+Description:
+Field artillery fire control men perform duties essential to the delivery of accurate artillery fire to include position survey and fire direction computation. Typical duties include preparation of fire control equipment for movement and operation, performance of detailed survey operations, performance of preventive maintenance, routine testing, authorized minor repairs to survey and fire control equipment, and operation of field communications equipment.
+
+Prepare automated fire direction system for operations; Construct basic automated system database; Enter and implement a planned communications configuration; Construct cannon battery database; Construct Regiment/Battalion/TPC database; Maintain data communications; Construct data distribution; Perform data communications.

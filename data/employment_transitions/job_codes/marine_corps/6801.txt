@@ -1,0 +1,6 @@
+Job Code: 6801
+
+Description:
+Investigate atmospheric phenomena and interpret meteorological data, gathered by surface and air stations, satellites, and radar to prepare reports and forecasts for public and other uses.
+
+Analyze climate data sets, using techniques such as geophysical fluid dynamics, data assimilation, or numerical modeling. Apply meteorological knowledge to problems in areas including agriculture, pollution control, and water management, and to issues such as global warming or ozone depletion. Broadcast weather conditions, forecasts, or severe weather warnings to the public via television, radio, or the Internet or provide this information to the news media. Collect air samples from planes or ships over land or sea to study atmospheric composition. Collect and analyze historical climate information such as precipitation and temperature records to help predict future weather and climate trends.

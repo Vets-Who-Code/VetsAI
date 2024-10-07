@@ -1,0 +1,10 @@
+Job Code: AMS
+
+Description:
+Inspects and maintains aircraft fuselages, wings, fixed and movable surfaces, airfoils, empennages, seats (except ejection seats), wheels, tires, controls, and mechanisms.
+
+(E4-E6) Able to perform all default tasks; Assembles and installs equipment; repairs stressed and non-stressed skin; fabricates and/or repairs metallic and nonmetallic parts and internal structural members; performs periodic aircraft inspections.
+
+(E1-E3) Uses schematic diagrams, drawings, and charts; prepares layout patterns and templates for metal work; fabricates, fits, and tests rigid and flexible hose assemblies; uses technical publications; uses and maintains hand tools; performs hardness tests.
+
+(E7-E9) Plans, organizes, and lays out work centers; schedules and assigns work loads; maintains work center registers, and inventory records; prepares local reports; uses and supervises the use of computer hardware and software.

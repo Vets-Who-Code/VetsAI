@@ -1,0 +1,10 @@
+Job Code: MR
+
+Description:
+Perform organizational and intermediate maintenance on assigned equipment and in support of other ships, requiring the skillful use of lathes, milling machines, boring mills, grinders, power hack saws, drill presses, and other machine tools; portable machinery; hand tools; and measuring instruments found in a machine shop.
+
+E1-E3; Stands engineering watches; clean engineering spaces and equipment; make minor repairs to engineering equipment; record readings of gages; participate in general drills; function as a member of a fire fighting team; and performs general detail duties.
+
+E7-E9; Able to perform the duties of E4-E6; Able to perform the duties required for MR1; supervises maintenance and repair activities; estimates time and material requirements; maintains work center records; prepares quarterly maintenance schedules.
+
+E4-E6; Able to perform the duties required for E1-E3; Operates and performs maintenance on all machine shop equipment that is required to repair, rebuild, or fabricate parts to maintain shipboard equipment and machinery; reads sketches, diagrams, and blueprints.

@@ -1,0 +1,10 @@
+Job Code: CTO
+
+Description:
+Operates on-line cryptographic devices and teletype equipment.
+
+Provide telecommunications support to the fleet (air, surface and shore); information processing using computer terminals observing all applicable security measures; administrative duties, which include maintaining files and updating communications publications via automated methods. Control and operate communications systems and networks including satellite systems, network servers, patch panels, modems, routers, multiplexers and communications security devices; assuring signal quality and path integrity using test equipment such as protocol analyzers, distortion test sets, spectrum oscilloscopes and state-of-the-art signal analysis equipment.
+
+(E7-E9) Able to perform all Mid-level tasks; Supervises and maintains communications center; supervises and evaluates subordinates; prepares written evaluation reports; allocates and tasks manpower assets to complete work load; manages safety.
+
+(E4-E6) Performs all default tasks; Sends and receives communications processing systems; maintains logs, records, files, and publications; inspects, cleans, and makes operational adjustments to keyboard equipment; performs computer software applications.

@@ -1,0 +1,4 @@
+Job Code: 9901
+
+Description:
+Basic officers are officers that do not have military qualifications and experience developed to be sufficient or adequate for qualification in other MOSs.

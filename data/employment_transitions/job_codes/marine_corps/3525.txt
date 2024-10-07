@@ -1,0 +1,6 @@
+Job Code: 3525
+
+Description:
+Crash/fire/rescue vehicle mechanics inspect, service, maintain, and repair crash/fire/rescue vehicles.
+
+Provides intermediate level inspection, diagnosis and maintenance of power train, air induction, exhaust, hydraulic, cooling, electrical, fuel, brake, steering and suspension components for Crash /Fire/ Rescue Vehicles.

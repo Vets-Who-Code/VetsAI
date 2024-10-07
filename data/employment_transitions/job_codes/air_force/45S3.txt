@@ -1,0 +1,10 @@
+Job Code: 45S3
+
+Description:
+Examines, diagnoses, and treats, by surgical and conservative means, diseases and injuries. Manages surgery services.
+
+Examines, diagnoses, and treats by surgical means, diseases, and injuries. Prepares and reviews case histories and obtains data through interviews. Examines patient and determines x-ray examinations and clinical laboratory tests required. Interprets test results and evaluates examination findings. Determines procedures for preoperative and postoperative care, such as administering sedatives, prescribing diets, and preparing operative area of patient. Coordinates surgical operation with anesthesiologist. Applies surgical procedures and assists specialists in performing surgery including thoracic, plastic, brain, and orthopedic. Administers and prescribes such conservative measures of treatment as antibiotics, drugs, and compresses. Treats patients suffering from surgical shock, postoperative hemorrhages, and other complications. Manages surgery services. Formulates plans and procedures for surgery services. Schedules operations and assigns surgeons, nurses, and medical technicians. Directs nurses in procedures for preoperative and postoperative care of patients and operating room techniques. Advises on kind and quantity of supplies and equipment. Coordinates surgery services with other medical activities. Instructs interns and residents in surgical procedures. Serves as consultant on surgery.
+
+Same as junior tasks.
+
+For award of AFSC 45S3, successful completion of a residency or fellowship in surgery acceptable to the Surgeon General, HQ USAF, is mandatory.

@@ -1,0 +1,6 @@
+Job Code: 2861
+
+Description:
+The radio technician repairs subassemblies of a high power, high frequency (HF) communications central.
+
+Typical duties include; diagnoses and fault isolation using the system built-in-tests, performing measurements with general purpose test equipment, performing subassembly and system alignments, replacing faulty components and subassemblies and installing authorized modifications.

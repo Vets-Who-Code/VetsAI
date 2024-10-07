@@ -1,0 +1,10 @@
+Job Code: IT
+
+Description:
+Perform core and specialty functions of Network Administration, Communications Operations and Message Processing. In the area of Network Administration, IT Technicians provide technical assistance to computer system users. They answer questions and/or resolve computer problems for clients. IT Technicians provide assistance concerning the use of computer hardware and software, including printing, installation, word-processing, electronic mail, and operating systems.
+
+Perform core and specialty functions of communications operations, message processing, and network administration and security; establish, monitor, and maintain Radio Frequency (RF) communications systems; perform spectrum management within an area of responsibility; handle, store, and retrieve incoming and outgoing messages; perform network system administration, maintenance and training; manage, plan and coordinate unit-level information systems security and integration across platforms, fleets, and services; and ensure the proper security, distribution, handling, accounting, reporting, and control of Communications Security (COMSEC) materials, systems, and equipment.
+
+E7-E9; Able to perform the functions of E4-E6; Develops and executes Emergency Action Plan and implements communications security; reports Information Security and Communications Security compliance; identifies, evaluates, and reports security incidents.
+
+E4-E6; Able to perform the duties of E1-E3; Operates network equipment; maintains and inventories media and technical library; documents customer trouble calls; safeguards Communication Security materials; handles classified materials; initializes computer systems.

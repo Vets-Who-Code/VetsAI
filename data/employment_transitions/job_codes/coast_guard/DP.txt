@@ -1,0 +1,10 @@
+Job Code: DP
+
+Description:
+Manages and maintains networked computer systems; installs hardware and software; troubleshoots problems related to hardware, software, and the network; maintains databases; establishes and provides customized training; writes user guides; and establishes system security and network integrity.
+
+Able to perform the duties required for DP3; installs and maintains network communication software and hardware; assists in maintaining record entry and file management routines; installs and maintains proprietary software for client-server data management system; conducts program and network troubleshooting and software and hardware evaluation.
+
+Writes computer programs and routines; installs and maintains proprietary operating and application software; installs and maintains work stations and server hardware.
+
+Able to perform the duties required for DP2 and DP1; supervises installation and maintenance of proprietary software for local-area network and wide-area network operations; supervises and advises file management systems operation and maintenance; trains users on software applications; supervises installation and maintenance of proprietary software for network systems, file management, and relational databases; provides advice and assistance for automation, policy, and procedures; trains users on systems management; establishes customized training programs; evaluates staff; manages technical support; analyzes system requirements, and makes recommendations for installation and maintenance of proprietary software for local area and wide area networks, client-server information systems, and network operation, security, and integrity; writes user guides; reviews system security, policy, and procedures.

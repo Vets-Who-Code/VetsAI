@@ -1,0 +1,8 @@
+Job Code: 0656
+
+Description:
+THIS MOS IS MERGED WITH MOS 0651 AND MOS 0656 IS DELETED. Tactical network specialists are responsible for installation, configuration, operation, and maintenance of networking systems. This includes installing and configuring hubs, routers, bridges, and various transmission media, installing and configuring server hardware and software, and coordinating with the information systems specialist to ensure the proper installation and configuration of workstation hardware and software to ensure efficient operation on the network. Tactical network specialists also install, optimize and troubleshoot Local Area and Wide Area Networks and operate the Tactical Data Network (TDN) server. This MOS will be assigned and voided only by the authority of the CMC (MM).
+
+Configure, install, operate, maintain, and protect a tactical network system.
+
+Develop data network diagrams; develop a data network addressing scheme; configure encryption devices on a data network; configure data network components for quality of service; configure a multiplexer; configure a network timing device; implement a data communications network plan; monitor data network performance; maintain data network components; maintain a data network and QOS; maintain a data network management system; maintain data network links; manage a data communications network; develop team assignments for a data network watch schedule.

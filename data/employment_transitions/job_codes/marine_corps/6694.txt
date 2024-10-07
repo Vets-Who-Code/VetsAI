@@ -1,0 +1,6 @@
+Job Code: 6694
+
+Description:
+Aviation logistics information management and support (ALIMS) specialist responsibilities encompass a broad spectrum of digital network and information systems operation, installation, and maintenance in support of Marine Corps and Naval Aviation. The ALIMS specialists are accountable for the deployment of tactical local and wide area networks to any theater of operation (from garrison to shipboard to forward deployed joint-service environments).
+
+Deploy tactical local and wide area networks to any theater of operation (from garrison to shipboard to forward deployed joint-service environments); Design, install, maintain and repair data communication links, fiber-optic and tactical fiber-optic cabling; Support myriad computer and network operating systems; Maintain and repair aircraft mission planning systems, aircraft maintenance systems; Field deployable SATCOM equipment; Analyze and evaluate system output; Design and manipulate database information to produce non-routine reports; Work with application and software programs in order to access and manage data stored in the computer's memory or data base file(s); Develop a monthly ALIMS utilization schedule and maintain a magnetic media/software library

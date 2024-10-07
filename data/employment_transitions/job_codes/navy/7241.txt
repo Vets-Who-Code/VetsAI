@@ -1,0 +1,8 @@
+Job Code: 7241
+
+Description:
+Repair Technician (Submarine). An officer of the Regular Navy whose permanent status is Warrant Officer.
+
+Same as default tasks.
+
+Furnishes design and test engineering services for propulsion and heat exchange equipment, including main engines, turbines, bearings, reduction gears, shafting, propellers, auxiliaries, boilers, condensers, distilling plants, pumps, blowers, refrigerating plants.

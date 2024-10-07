@@ -1,0 +1,6 @@
+Job Code: 2831
+
+Description:
+The AN/TRC-170 technicians are qualified to install, test, and repair multi-channel communications equipment used for high capacity, point-to-point communications. Typical duties include tuning and aligning systems, adjusting audio or data levels, using test equipment to make checks on circuit quality, diagnose equipment faults to the component level, and replace faulty parts or components.
+
+Perform corrective maintenance on digital wideband transmission systems to the line replaceable unit (LRU) level; Perform limited corrective maintenance on communication security equipment used in digital wideband transmission systems; Perform corrective maintenance on the AN/TRC-170 to the piece-part component level; Provide technical assistance during the installation of digital wideband transmission systems.

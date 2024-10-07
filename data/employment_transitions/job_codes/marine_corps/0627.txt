@@ -1,0 +1,8 @@
+Job Code: 0627
+
+Description:
+The SHF satellite communications operator-maintainer PMOS identifies Marines who emplace, interconnect, energize, and verify the operation of SHF satellite terminal equipment.
+
+Create a satellite communications section bill of materials, conduct a site survey, determine satellite access request requirements, perform proper generator power-up procedures, supervise satellite communications terminal preventative maintenance.
+
+Install a satellite communications antenna, operate a satellite communications terminal, operate the secure mobile anti-jam reliable tactical terminal, complete satellite communications terminal preventative maintenance.

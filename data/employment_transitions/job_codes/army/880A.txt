@@ -1,0 +1,10 @@
+Job Code: 880A
+
+Description:
+Responsible for proper operation of vessel including discipline of crew and seaworthiness of vessel.
+
+Commands Army Class A1 vessels operating on lakes, bays, sounds, and coastal waters; responsible for proper operation of vessel including discipline of crew and seaworthiness of vessel; navigates vessel using nautical charts, area plotting sheets, compass, sextant, terrestrial bearings, and electronic navigational aids; directs course of vessel to avoid surface and underwater hazards, to include areas where ice is seen or reported; directs operation of ship-to-ship and ship-to-shore radio and visual communication systems; directs fueling, ballasting, trimming operations, and cargo stowage; assigns crew to general watches and prepares station bills; inspects vessel to ensure crew and passengers observe operational and safety regulations and procedures; maintains vessels on board records to include the Official Vessel Log.
+
+Performs duties of preceding skill levels; commands Army Class A2 vessels operating upon oceans; performs Harbormaster duties controlling all port operations, to include safety, security, maintenance, Marine communications, vessel berthing, and movements; provides technical guidance and direction in regard to Marine related issues at battalion level; commands watercraft detachments either afloat or ashore; provides technical guidance and direction in regard to Marine related issues above battalion level.
+
+Performs duties of preceding skill levels; performs as technical or functional systems integrator at senior staff level.

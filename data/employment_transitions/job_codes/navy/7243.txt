@@ -1,0 +1,8 @@
+Job Code: 7243
+
+Description:
+Repair Technician (Submarine). An Officer of the Regular Navy who is on the retired list.
+
+Same as default tasks.
+
+Furnishes design and test engineering services for propulsion and heat exchange equipment, including main engines, turbines, bearings, reduction gears, shafting, propellers, auxiliaries, boilers, condensers, distilling plants, pumps, blowers, refrigerating plants.

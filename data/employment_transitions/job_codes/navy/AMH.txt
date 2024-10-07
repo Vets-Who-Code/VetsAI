@@ -1,0 +1,10 @@
+Job Code: AMH
+
+Description:
+Maintains hydraulic systems, including main and auxiliary power systems and unit actuating subsystems landing gear (excluding wheels and tires), brakes, and related pneumatic systems.
+
+E1-E3; Assists in the maintenance of aircraft, associated aeronautical equipment, and aircraft support equipment; services, cleans, and handles aircraft; performs other apprentice-level duties involved in the operation of a naval aircraft afloat and ashore.
+
+(E4-E6) Supervises 10-15 person work groups replaces gaskets, packing, and wipers in hydraulic components; adjusts and replaces hydraulic and pneumatic components of flight control systems; bleeds hydraulic power system and subsystem.
+
+(E7-E9) Performs all Mid-level tasks; analyzes malfunctions of flight control systems and determines corrective action; determines the need and method of decontamination of a hydraulic system; plans and organizes work centers; provides technical assistance.

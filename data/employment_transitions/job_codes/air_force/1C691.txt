@@ -1,0 +1,10 @@
+Job Code: 1C691
+
+Description:
+Manages or performs duties in space operations; space surveillance, space control, missile warning, satellite command and control (C2), or range operations activities.
+
+Experience in functions such as C2 systems, telemetry processing, ground systems configuration, mission planning, anomaly resolution, or range operations. Also, experience performing or supervising space systems operations functions and activities.
+
+experience managing space systems operations activities.
+
+Detects, identifies, and maintains surveillance on low orbiting and deep space satellite vehicles using optical and radar sensors. Operates space systems to perform space control mission. Detects and tracks sea launched and intercontinental ballistic missiles using a variety of system peculiar sensors. Forwards information to appropriate command and control agencies. Plans satellite contacts, resolves emergencies, and performs satellite commanding during launch, early orbit, daily operations, and end-of-life testing. Performs launch and on-orbit operations for military communications and Global Positioning System satellites. Provides on-orbit telemetry, tracking, and commanding for these and other satellite systems. Performs range operations in support of spacelift and aeronautical testing to fulfill war fighting and national requirements for DoD, NASA, and commercial users. Provides daily command and control expertise at numerous C2 agencies such as the Joint Space Operations Center, regional Air and Space Operations Centers, Space Control Center, National Reconnaissance Operations Center and Missile Correlation Center. Validates and enhances warfighter capabilities through testing and evaluation of space systems. Replicates adversary space capabilities to improve combat training and increase awareness of threats from space.

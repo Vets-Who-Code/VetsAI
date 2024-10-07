@@ -1,0 +1,6 @@
+Job Code: 9904
+
+Description:
+Colonel, logisticians are logistics officers in the grade of colonel. This title and MOS will be used to identify colonel logistics billets in T/Os.
+
+Supervises soldiers engaged in supply, services, materiel management and logistics operations.

@@ -1,0 +1,10 @@
+Job Code: 2A693
+
+Description:
+Maintains aircraft egress systems with ejection seats, canopies, and hatches; explosive components; electro-explosive devices (EED); subsystems; and related support equipment (SE).
+
+Advises on and solves installation, maintenance, and repair problems by studying schematic and technical publications. Diagnoses malfunctions and recommends corrective action. Implements maintenance and safety policies for egress systems and integral egress system components to include personnel parachute assemblies. Performs scheduled and unscheduled maintenance on egress systems. Removes and installs egress systems. Ensures egress explosive cartridge activated devices (CAD), pressure activated devices (PAD), and EEDS are safe or dearmed prior to performing maintenance. Performs operational and functional tests of egress systems, subsystems, and components using test equipment and test kits. Applies corrosion control procedures to escape systems and related components. Operates and maintains related SE. Uses the core automated maintenance system (CAMS) to monitor maintenance trends, analyze equipment requirements, maintain equipment records, document maintenance actions, and time change database. Performs integrity inspections of the escape system. Inspects egress systems, subsystems, and components for safety, security, and serviceability. Inspects and determines serviceability of CAD, PAD and EED devices based on shelf and service life limits. Handles, labels, and disposes of hazardous waste and materials according to federal and local environmental standards.
+
+see collateral duty
+
+experience in functions such as removing, inspecting, installing, repairing, and modifying aircrew egress systems and components. Also, experience performing or supervising functions involved in maintaining and inspecting egress systems and subsystems.

@@ -1,0 +1,6 @@
+Job Code: 9969
+
+Description:
+This MOS will be used in T/Os to designate a billet to which any pilot/naval flight officer may be assigned but will not be assigned to an individual.
+
+Naval aviator/naval flight officer are officers in the grade of colonel designated as NA/NFO; This title and MOS will also be used to identify colonel, NA/NFO billets in T/Os

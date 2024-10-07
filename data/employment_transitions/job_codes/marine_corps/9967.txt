@@ -1,0 +1,4 @@
+Job Code: 9967
+
+Description:
+This MOS will be used in T/Os to designate a billet to which a helicopter pilot may be assigned but will not be assigned to an individual.

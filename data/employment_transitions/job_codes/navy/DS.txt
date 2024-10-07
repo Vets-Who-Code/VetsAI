@@ -1,0 +1,10 @@
+Job Code: DS
+
+Description:
+Performs general maintenance and repair on electronic data systems and equipment, including computers, data storage devices, digital interface and display equipment, link terminals, local area networking, and related equipment.
+
+(E4-E6) Able to perform the duties of E1-E3);
+
+(E7-E9) Able to perform the duties of E4-E6); supervises and inspects electronic data system maintenance and repair; constructs and operates computer operational and maintenance programs; identifies interface characteristics of digital data systems.
+
+Inspects and tests equipment and components; solders connections; measures voltage and resistance; analyzes circuits; traces defective parts; repairs electronic subassemblies; routinely uses electronics test equipment.

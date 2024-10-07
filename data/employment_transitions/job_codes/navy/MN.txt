@@ -1,0 +1,10 @@
+Job Code: MN
+
+Description:
+Performs organizational and intermediate-level functions of maintenance, inspection, installation, and recovery of mines (underwater explosive devices); assembles and disassembles mines.
+
+(E7-E9) Performs all duties required of E4-E6; Able to perform the duties required for MN1; conducts risk and threat assessment; and oversees handling and storing of ammunition and ordnance; implements policy statements.
+
+Minemen perform their duties at sea aboard minesweepers assisting in the detection and neutralization of underwater mines. Ashore, minemen are technicians who test, assemble and maintain underwater explosive devices (mines). They test various electronic components to ensure proper repair and make sure that the mine works properly. They are also responsible for safe storage, handling and loading of mines for transporting.
+
+(E4-E6) Performs all duties required of E1-E3; Performs sonar system operations and maintenance; repairs electrical wiring and cabling; operates shipboard deck equipment; conducts ship wide security and safety operations; performs ship's navigation.

@@ -1,0 +1,10 @@
+Job Code: AK
+
+Description:
+Receives, identifies, stores, and issues aviation supplies, spare parts, and equipment; maintains stock control records; conducts inventories.
+
+E7-E9; Able to perform the duties required for E4-E6; Monitors shipboard uniform automated data processing system procedures applicable to supply department functions; plans the layout of offices, store rooms.
+
+E1-E3; Assists in the maintenance of aircraft, associated aeronautical equipment, and aircraft support equipment; services, cleans, and handles aircraft; performs other apprentice-level duties involved in the operation of a naval aircraft afloat and ashore.
+
+E4-E6; Able to perform the duties required for E1-E3; Applies automated data processing supply procedures including data entry; receives, verifies for quantity and condition, and acknowledges the receipt of materials; issues materials; maintains receipts.

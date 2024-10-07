@@ -1,0 +1,10 @@
+Job Code: ML
+
+Description:
+Operates foundries aboard ship and at shore stations.
+
+Conducts bench and floor molds; makes and installs cores; re-babbits bearings; makes molds directly from castings and analyzes casting quality; allows for shrinkage effects of cast steel and monel.
+
+Conducts bench and floor molds; makes and installs cores; re-babbits bearings; makes molds directly from castings and analyzes casting quality; allows for shrinkage effects of cast steel and monel.
+
+(E7-E9) Designs castings with inserts and determines pouring rates and temperatures; trains, manages, evaluates, and supervises personnel in foundry operations, metal identification, and pyrometry.

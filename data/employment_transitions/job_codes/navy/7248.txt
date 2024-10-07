@@ -1,0 +1,8 @@
+Job Code: 7248
+
+Description:
+Repair Technician (Submarine). An officer of the Naval Reserve who was appointed in the Naval Reserve Integration Program from enlisted status or whose permanent status is Warrant Officer or enlisted.
+
+Furnishes design and test engineering services for propulsion and heat exchange equipment, including main engines, turbines, bearings, reduction gears, shafting, propellers, auxiliaries, boilers, condensers, distilling plants, pumps, blowers, refrigerating plants.
+
+Same as default tasks.

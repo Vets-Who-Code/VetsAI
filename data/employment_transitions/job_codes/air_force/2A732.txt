@@ -1,0 +1,10 @@
+Job Code: 2A732
+
+Description:
+Inspects aerospace weapon systems components and support equipment for structural integrity using nondestructive inspection methods and performs fluid analysis.
+
+Determines test method, and prepares fluids and parts for nondestructive inspection. Interprets nondestructive inspection test results, and provides information about defects to repair center. Analyzes wear metal content on engine lubricating oil and other fluids, and recommends corrective action. Establishes radiation areas for radiographic operations. Computes and monitors personal exposure areas for radiographic operations, and monitors personnel exposure data. Performs nondestructive inspection on structures, components, and systems. Detects flaws such as cracks, delaminations, voids, processing defects, and heat damage using penetrant, eddy current, magnetic particle, radiographic, optical, and ultrasonic test equipment. Determines metallurgical information of components according to alloy, temper, conductivity, and associated factors. Operates, maintains, and inspects nondestructive equipment. Performs operator maintenance and service inspections on shop equipment and tools. Ensures lock out and tag out procedures are accomplished prior to maintenance on equipment. Performs silver recovery functions. Handles and disposes of hazardous waste and materials.
+
+See collateral duty
+
+experience flaw detection process controls, equipment calibration and maintenance, safety directives, and hazardous waste programs. Qualification in and possession of AFSC 2A752. Also, experience supervising functions such as those involved in a nondestructive inspection laboratory.

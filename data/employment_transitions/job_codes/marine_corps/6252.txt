@@ -1,0 +1,6 @@
+Job Code: 6252
+
+Description:
+Fixed-Wing Aircraft airframe mechanics, AV-8/TAV-8; inspect, maintain, and repair aircraft hydraulic/pneumatic and structure systems.
+
+Inspect aircraft hydraulic/pneumatic and structure systems;, Maintain aircraft hydraulic/pneumatic and structure systems; Repair aircraft hydraulic/pneumatic and structure systems

@@ -1,0 +1,6 @@
+Job Code: 0640
+
+Description:
+Strategic spectrum planners supervise and manage the planning and use of the electromagnetic spectrum for all communications and radio location requirements, provide technical and administrative guidance for the certification of equipment utilizing the electromagnetic spectrum, develop and supervise the Joint Communications Electronic Operating Instructions (JCEOI) and associated communication publications and documents, provide guidance and oversight on the use of Spectrum XXI, request, coordinate, and ensure Host Nation Approval (HNA) for equipment and coordinate with the Joint Services.
+
+Write a spectrum management appendix to Annex K; Supervise the maintenance of electromagnetic spectrum management databases; Supervise Host Nation Coordination (HNC); Determine electromagnetic spectrum requirements; Supervise the development of the Joint Communication Electronics Operation Instruction (JCEOI); Supervise the development of the Joint Restricted Frequency List (JRFL); Supervise spectrum supportability and certification; Supervise Joint Spectrum Interference Resolution (JSIR)

@@ -1,0 +1,10 @@
+Job Code: CTR
+
+Description:
+Control the flow of messages and information. Their work depends on their special career area: administration (CTA) - administrative and clerical duties that control access to classified material; interpretive (CTI) - radiotelephone communications and foreign language translation; maintenance (CTM)- the installation, servicing and repair of electronic and electromechanical equipment; communication (CTO) - operation of telecommunications systems, and AIS networking and information management; collection (CTR) - Morse code communications and operation of radio direction-finding equipment; and technical (CTT) - communications by means other than Morse code and electronic countermeasures.
+
+E4-E6; Able to perform the duties of E1-E3; Operates signals collection equipment, systems, and antennas for analysis in identifying essential elements of information; drafts basic Signals Intelligence (SIGINT) reports and executes radio direction finding.
+
+E7-E9; Able to perform the duties required for E4-E6; Determine report-ability and urgency of Signals Intelligence (SIGINT) information; selects appropriate supporting or refuting information for inclusion in a Signals Intelligence report; analyzes Signals.
+
+Provide in-depth analysis on a variety of complex digital communications signals using sophisticated communications equipment and computer technology to provide critical intelligence information; provide analysis and technical guidance and targeting information to weapons systems while assigned to ships and submarines; operate sophisticated state-of-the-art strategic and tactical signals collection and analysis systems; locate ships, aircraft and submarines using sophisticated direction finding technology; originate reports and briefs for operational commanders both ashore and afloat.

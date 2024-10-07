@@ -1,0 +1,6 @@
+Job Code: 9625
+
+Description:
+Modeling and simulation officers manage the acquisition and operation of training, analysis, or acquisition- based simulations in the Marine Corps. Their duties encompass understanding how tactical simulations operate, including both their internal and human-computer interface characteristics. They must be able to modify parametric data, and make reports and observations from the results of running a simulation. They must have a full understanding of after-action review systems. They should be capable of building and designing a simulation with a complete understanding of virtual worlds, graphics, terrain databases, algorithms, artificial intelligence techniques, and statistical analysis. They must have an understanding of the theory of and different approaches to modeling and simulation. They must be able to deal on a daily basis with very detailed, technical aspects of computer simulation development as well as conceptual issues governing the development of an analytically sound model.
+
+Modeling and simulation officers manage the acquisition and operation of training, analysis, or acquisition-based simulations in the Marine Corps.

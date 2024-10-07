@@ -1,0 +1,10 @@
+Job Code: DP
+
+Description:
+Operates data processing equipment to record source data; sets up and operates data processing equipment, including card, magnetic tape, disk, computers, and peripherals.
+
+(E7-E9) Able to perform the duties required for (E4-E6) analyzes ADP and EDP systems and subsystems; implements computer maintenance and diagnostic programs; designs input and output requirements for systems and subsystems.
+
+Prepares program controls; handles and stores cards, magnetic tapes, and disk packs in compliance with environmental requirements; processes data and record operations; performs routine user maintenance.
+
+(E4-E6) Able to perform the duties required for (E1-E3);

@@ -1,0 +1,10 @@
+Job Code: 2834
+
+Description:
+Satellite communications (SATCOM) technicians are qualified to test and repair satellite communications equipment; These terminals are used to establish high capacity communications with other military and civilian systems; Typical duties include adjusting audio or data levels, use of test equipment to identify and diagnose equipment faults to the component level and making repairs as required; Technicians are trained to perform preventative and corrective maintenance to the field level; Technicians are also trained in employment and installation of the terminals to complement their working knowledge of hardware capabilities; Lateral input to MOS 2834 is primarily from other OccFld 28 MOSs; Marines in related electronics OccFlds 59, 63, and 64 will be considered on a case-by-case basis for a lateral move into MOS 2834; Nominees for lateral move will submit request via command CRS; MOS 2891, Electronics Maintenance Chief, is assigned upon promotion to Master Sergeant.
+
+Manage maintenance shop programs, analyze maintenance information system data, administer communication electronic maintenance shop procedures, administer quality control program, administer electromagnetic environmental effects program
+
+Recommend To/E changes, draft unit's maintenance policy letters, plan deployment/installation of a field maintenance facility, deploy a field maintenance activity
+
+Perform corrective maintenance on ground mobile forces satcom equipment to the component level; perform limited maintenance on comsec equipment used in ground mobile forces satcom systems, provide technical assistance during the installation of ground mobile forces satcom equipment.

@@ -1,0 +1,6 @@
+Job Code: 0220
+
+Description:
+Command and Control Center Officers.
+
+Provides recommendations to the commander regarding sensor employment, coordinates/controls sensor employment and readout, makes recommendations to action/reaction to sensor derived intelligence, and supervises sensor related training, maintenance, and employment.

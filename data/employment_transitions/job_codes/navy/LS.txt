@@ -1,0 +1,10 @@
+Job Code: LS
+
+Description:
+Manage inventories of repair parts/general supplies and distribute mail for ships, squadrons, and shore-based activities; procure, receive, store and issue material and repair components; utilize financial accounting and database systems to perform inventory and financial management functions; additionally, sort and distribute all official and personal mail, manage money order and stamp inventories, and maintain financial and inventory reports,
+
+E4-E6; Able to perform the duties of E1-E3; Maintains all report files, shipping records, and correspondence files; arranges customer requirements and services; maintains supply or transportation discrepancies; prepares expenditure documents for disposition.
+
+E7-E9; Able to perform the duties of E4-E6; Manages financial systems; analyzes inventory management reports; monitors supply configuration management reports; analyzes supply management data; maintains system security; maintains database integrity.
+
+Manage inventories of repair parts/general supplies and distribute mail for ships, squadrons, and shore-based activities. Procure, receive, store and issue material and repair components. Utilize financial accounting and database systems to perform inventory and financial management functions. Sort and distribute all official and personal mail, manage money order and stamp inventories, and maintain financial and inventory reports.

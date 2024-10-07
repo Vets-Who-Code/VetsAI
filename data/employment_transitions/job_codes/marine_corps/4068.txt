@@ -1,0 +1,6 @@
+Job Code: 4068
+
+Description:
+Data network technicians plan, design, install, optimize and troubleshoot Local Area Networks, Wide Area Networks, and link heterogeneous networks through the application of appropriate data and telecommunications hardware and software.
+
+Configure and define parameters for installation or testing of local area network (LAN), wide area network (WAN), hubs, routers, switches, controllers, multiplexers, or related networking equipment.

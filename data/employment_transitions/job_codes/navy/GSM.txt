@@ -1,0 +1,10 @@
+Job Code: GSM
+
+Description:
+Operate, repair, and perform organizational and intermediate maintenance on mechanical components of gas turbine engines, main propulsion machinery (including gears, shafts, and controllable pitch propellers), assigned auxiliary equipment and propulsion control systems.
+
+E7 only, coverts to GSCS at E8 rank; able to perform the duties required for E4-E6; Able to perform the duties required for GSM1; reviews automated alarm data logs and ship-to-shore maintenance progress reports; updates engineer's bell logs.
+
+E1-E3; Stands engineering watches; clean engineering spaces and equipment; make minor repairs to engineering equipment; record readings of gages; participate in general drills; function as a member of a fire fighting team; and performs general detail duties.
+
+E4-E6; Able to perform the duties required for E1-E3; Aligns Low Pressure Air Compressors (LPAC) and oil tanks; analyzes fuel oil samples; conducts inlet and module preservation; determines fuel tank levels; disposes of hazardous material; estimates fuel consumption rates.

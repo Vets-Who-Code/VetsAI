@@ -1,0 +1,8 @@
+Job Code: 0620
+
+Description:
+Tactical communications planning and engineer officers engineer, supervise, and manage the planning, installation and operation of transmission, multiplexing, timing subsystems, circuit integration, and technical control functions within the tactical communications architecture in support of the MAGTF, Joint, and Coalition networks. They develop documentation required to ensure effective employment of communications networks in current and future operations.
+
+Plan a Transmission Network for an element of a Marine Air Ground Task Force (MAGTF); Plan a Multiplexing Network for an element of a Marine Air Ground Task Force (MAGTF); Plan a Transmission Network for a Marine Air Ground Task Force (MAGTF); Plan a Multiplexing Network for a Marine Air Ground Task Force (MAGTF); Design a transmission network for an element of a Marine Air Ground Task Force (MAGTF); Design a Multiplexing Network for an element of a Marine Air Ground Task Force (MAGTF); Design a Transmission Network for a Marine Air Ground Task Force (MAGTF)
+
+Design a Multiplexing Network for a Marine Air Ground Task Force (MAGTF); Engineer a Transmission Network for an element of a Marine Air Ground Task Force (MAGTF); Engineer a Multiplexing Network for an element of a Marine Air Ground Task Force (MAGTF); Engineer a Transmission Network for a Marine Air Ground Task Force (MAGTF); Engineer a Multiplexing Network for a Marine Air Ground Task Force (MAGTF)

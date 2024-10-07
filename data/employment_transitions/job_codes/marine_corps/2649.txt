@@ -1,0 +1,6 @@
+Job Code: 2649
+
+Description:
+Cryptanalysts analyze, identify, decrypt, solve, or assist in the recovery and solution of cryptographic systems.
+
+Cryptanalysts categorize encrypted messages, identify characteristics of individual systems, and then prepare reports, and record information of technical importance. To assist in these tasks, cryptanalysts maintain analytic aids and files of reconstructed elements of cryptosystems, and coordinate activities with analysis, machine processing, and linguistic personnel. Finally, cryptanalysts supervise or assist in the installation and operation of applicable signal collection and analysis facilities.

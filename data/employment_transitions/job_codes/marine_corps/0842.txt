@@ -1,0 +1,6 @@
+Job Code: 0842
+
+Description:
+Field artillery radar operators perform the entire duties required for emplacement, orientation, and operation of field artillery radar equipment. They prepare the radar equipment, power generator and associated equipment for movement and operation, lay communications wire, install and operate field telephones, perform preventive maintenance, construct field fortifications, and camouflage and protect the equipment position
+
+Emplace the radar set; Bore sight the radar set antenna; Prepare the radar set common shelter for operation; Perform the radar set startup procedures; Gather initialization data for radar set; Initialize the radar set; Load the digital terrain map for radar set; Operate the radar set in the hostile mode.

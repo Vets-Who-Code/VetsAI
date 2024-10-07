@@ -1,0 +1,6 @@
+Job Code: 2823
+
+Description:
+Technical control chiefs supervise the operation and maintenance of technical control equipment in MAGTF and joint communications networks. They are trained to evaluate the technical supportability and limitations of communications equipment, draft MAGTF/joint systems architecture and communications plans, and coordinate technical interface and restoration issues with higher, adjacent, and subordinate commands. This MOS applies to paygrade E-6 thru E-9 (SSgt-MGySgt).
+
+Develop detailed system level data for a MAGTF or Joint level communications plan; Restore complex circuits/links; Perform advanced corrective maintenance on technical control facilities to the piece-part component level; Maintain the quality of service of a network; Coordinate activation/deactivation of communications circuits/links connecting to the Defense information Services Agency.

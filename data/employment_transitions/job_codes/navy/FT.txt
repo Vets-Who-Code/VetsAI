@@ -1,0 +1,10 @@
+Job Code: FT
+
+Description:
+Operates, tests, repairs, and performs maintenance on fire control systems, including launch systems, equipment, and associated test equipment; performs repair of computers; serves as system local area network administrator.
+
+E4-E6; Able to perform the duties of E1-E3; Adjusts, aligns, and calibrates basic electronic circuits; under supervision, performs troubleshooting, calibration, adjustments, and tests on Local Area Networks (LAN) fire control and guidance systems.
+
+E1-E3; Maintain ship's compartments, decks, deck machinery, and equipment, external structure, lines and rigging; stand deck watches, such as helmsman, lookout and messenger watches underway; stand pier sentry, fire security, anchor, and other special watch duties.
+
+E7-E9; Able to perform the duties of E4-E6; Compiles and analyzes missile targeting data; serves as shop manager; coordinates and directs maintenance on fire control, guidance, test, and readiness equipment and support subsystems.

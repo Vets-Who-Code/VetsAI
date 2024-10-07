@@ -1,0 +1,10 @@
+Job Code: OT
+
+Description:
+Collects oceanographic data on underwater acoustical signals; processes this information for automatic data processing and forwards information to superiors; has knowledge of basic oceanography, underwater acoustics, sonar systems, and computer data input.
+
+E4-E6; Able to perform the duties required for E1-E3;
+
+E7-E9; Able to perform the duties required for E4-E6; supervises the training of personnel in the operation of underwater acoustic equipment and in the gathering and processing of oceanographic data; prepares correspondence and written inspections.
+
+Analyzes various acoustic displays and converts displayed information into a format acceptable for computer inputs; operates computer systems; performs plotting and navigation tasks.

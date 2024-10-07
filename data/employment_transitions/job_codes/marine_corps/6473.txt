@@ -1,0 +1,6 @@
+Job Code: 6473
+
+Description:
+Aircraft electronic countermeasures systems technicians, helicopter, at the IMA level, inspect, test, maintain, and repair airborne weapon replaceable assemblies, shop replaceable assemblies, and ancillary equipment whose aggregate constitutes a complete aircraft electronic countermeasures system or subsystem.
+
+The Technician will operate and maintain, including both scheduled and unscheduled maintenance, the CASS Test Station, as well as perform fault isolation and maintenance on aircraft radar Units Under Test (UUTs) utilizing the RF and High Power configurations of the CASS Test Station. This will include in-depth circuit analysis, adjust/repair, and serviceability verification of AN/APG-65, AN/APG-73, AN/AWG-9, and AN/APS-137 radar systems.

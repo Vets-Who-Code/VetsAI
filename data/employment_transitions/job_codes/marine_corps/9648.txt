@@ -1,0 +1,6 @@
+Job Code: 9648
+
+Description:
+Management, data systems officers, manage system development activities, including assessment of feasibility, detailed system design, testing, conversion, implementation, and post-implementation review.
+
+Participates in the evaluation of system development documentation to ensure economic and operational viability of the system, integrity of system design, and understanding of the system by both functional managers and the technical systems staff; Determines the need for the integration of existing and developing systems; Coordinates the development of measurable objectives for system performance that form the baseline for the measurement of system effectiveness; Determines management strategy, policy, and doctrine for system development, documentation, and information processing management standard; Conducts evaluation of existing information systems with regard to throughput performance, utilization of input/output media, and overall user satisfaction; Specifies and coordinates current hardware, software ,and project management practices for both the technical and user systems development staff.

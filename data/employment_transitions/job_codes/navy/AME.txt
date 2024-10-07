@@ -1,0 +1,10 @@
+Job Code: AME
+
+Description:
+Maintains safety belts, shoulder harnesses and integrated flight harnesses, inertia reels, seat and canopy ejection systems, gaseous and liquid oxygen systems, life raft ejection systems, fire extinguishing systems (excluding fire detection systems), emergency egress systems, air conditioning, heating, and cockpit pressurization systems, and anti-G systems; anti-icing systems; bleed air systems; pneumatic systems; defog systems; rain removal systems; applies Hazmat procedures; applies Quality Assurance methods; applies aircraft corrosion control techniques; applies tool control methods; replenishes liquid oxygen and gaseous systems; removes, inspects, installs, and rigs egress systems; performs daily preflight, postflight, and other periodic inspections.
+
+E1-E3; Assists in the maintenance of aircraft, associated aeronautical equipment, and aircraft support equipment; services, cleans, and handles aircraft; performs other apprentice-level duties involved in the operation of a naval aircraft afloat and ashore.
+
+E4-E6; Able to perform the duties required for E1-E3; Applies operating principles of aircraft oxygen systems; services aircraft with liquid and gaseous oxygen using oxygen transfer trailers or direct filling equipment; purges aircraft oxygen systems.
+
+E7 only; converts to AMCS at E8; Able to perform the duties required for E4-E6; Interprets technical publications and directives; plans, organizes, and lays out work centers; maintains work center registers and prepares local reports.

@@ -1,0 +1,4 @@
+Job Code: 9965
+
+Description:
+This MOS will be used in T/Os to designate a billet to which a Fixed-Wing Pilot may be assigned but will not be assigned to an individual.

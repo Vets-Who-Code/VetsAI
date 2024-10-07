@@ -1,0 +1,4 @@
+Job Code: 1845
+
+Description:
+Applies principles and techniques of computer science and computer engineering to research, design, develop, test and evaluate software and firmware for computer network attack, exploitation and defense in Cyberspace Operations. An officer of the Naval Reserve.

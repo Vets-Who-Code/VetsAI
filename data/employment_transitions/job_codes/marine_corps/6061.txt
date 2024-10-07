@@ -1,0 +1,6 @@
+Job Code: 6061
+
+Description:
+The aircraft maintenance OccFlds includes direct and indirect support of the total airframes and power plant package of all aviation aircraft weapons systems. While there is similarity in the skills required to provide this support, the systems being supported are diverse. The following examples are provided: direct support-repair and servicing at the organizational maintenance activity which is normally accomplished on aircraft, e.g., preflight and servicing of aircraft and their systems; indirect support-repair of components at the intermediate maintenance activity which is normally accomplished off aircraft, e.g., hydraulic actuators, servos, and accumulators, aircraft engines, and transmissions.
+
+Direct and indirect support of the total airframes and power plant package of all aviation aircraft weapons systems

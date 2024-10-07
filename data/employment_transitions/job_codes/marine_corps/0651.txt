@@ -1,0 +1,8 @@
+Job Code: 0651
+
+Description:
+Data network specialists are responsible for the installation, configuration, and management of data network systems in both a stand-alone and client-server environment, including MS Exchange, Defense Message Systems, and other authorized data network systems. They install, configure, and maintain network services, both hardware and software. They also plan and execute the integration of multiple information systems in a network environment, evaluate and resolve customer information system problems, and effect required hardware upgrades and repair to maintain mission capability.
+
+Plan a data network, configure encryption devices on a data network, configure quality of service, install multiplexer, configure network timing, operate a data network helpdesk, implement a data communications network plan, monitor data network services, maintain a data network.
+
+Install Network equipment, operate network equipment, maintain network equipment.

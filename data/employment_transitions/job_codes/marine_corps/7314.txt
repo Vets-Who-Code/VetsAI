@@ -1,0 +1,6 @@
+Job Code: 7314
+
+Description:
+The air vehicle operator executes the proper techniques and procedures to maintain the planned flight profile of the UAV. They communicate through various networks with the payload operator, mission commander, and others as appropriate. They are responsible for execution of the payload mission(s) during UAV flights.
+
+Executes the proper techniques and procedures to maintain the planned flight profile of the UAV; Communicate through various networks with the payload operator, mission commander, and others as appropriate; Responsible for execution of the payload mission(s) during UAV flights; Reports imagery viewed and when appropriate, performs standard call for fire procedures to direct weapon towards designated targets; Make effective use of the UAV payload through proper planning techniques, and crew coordination; Set up and execute Remote

@@ -1,0 +1,10 @@
+Job Code: 27X
+
+Description:
+Performs maintenance on the PATRIOT missile system.
+
+Implements quality control measures, determines faulty work practices and demonstrates proper maintenance and troubleshooting techniques; establishes workloads, repair priorities and maintains maintenance records; supervises maintenance and inspection teams; instructs lower ranking personnel in the technical aspects of the PATRIOT system; prepares maintenance and supply forms.
+
+Performs DS/GS level maintenance on the PATRIOT Information and Coordination Central (ICC), Engagement Control Station (ECS), Radar Set (RS), Antenna Mast Group (AMG), Launching Station (LS) and Communications Relay Group (CRG); performs tests and adjusts components to specific tolerances and determines shortcomings and malfunctions in electronic assemblies, subassemblies, modules and circuit elements with common and system peculiar test equipment; isolates malfunctions using automatic and semi-automatic program maintenance diagnostic software, unit self test and built in test equipment (BITE); develops specialized computer software tests to evaluate suspected faults; isolates system interface malfunctions; determines serviceability and disposition of defective assemblies, subassemblies, modules and circuit elements; repairs unserviceable items by removing and replacing defective components; operates and performs unit level maintenance on standard and system peculiar test equipment; performs quality control measures and serves on maintenance and inspection teams; completes maintenance and supply forms; provides technical assistance to supported units; performs initial, in process and final type inspections of designated system items and their assemblies, subassemblies, modules and circuit elements; performs as maintenance technical inspector.
+
+Recommends procedures for receipt, storage, inspection, testing and repair of items; organizes maintenance teams; prepares maintenance reports.

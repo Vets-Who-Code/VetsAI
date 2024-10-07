@@ -1,0 +1,4 @@
+Job Code: 7598
+
+Description:
+Basic pilots are newly designated NAs that have not yet become combat capable in a specific model of aircraft in the FMF inventory (e.g., MOS 7507: AV-8B; MOS 7510: A-6; MOS 7521: F/A-18; MOS 7560: CH-46, etc.).

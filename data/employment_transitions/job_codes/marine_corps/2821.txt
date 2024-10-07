@@ -1,0 +1,8 @@
+Job Code: 2821
+
+Description:
+Technical controllers Marines operate and maintain technical control equipment. They establish technical control sites, locate and correct faults, or improve signal quality in communications networks to maintain adequate communications and data services for the MAGTF commander. Typical duties include testing of circuits to ensure circuit quality is maintained, repairing faults or degradation in communications networks, and maintaining records on activation/deactivation of communications links.
+
+Document maintenance actions; Requisition parts; Solder electronic components; Protect electrostatic sensitive devices; Diagnose basic electronic circuits; Maintain an electrostatic sensitive device (ESD) safe work area.
+
+Analyze table of organization/equipment (TO&E); Plan for the deployment of a field maintenance facility; Draft unit's maintenance policy letters; Manage maintenance shop programs; Analyze maintenance information; Administer pre-expended bin (PEB) control program; Administer calibration control program
