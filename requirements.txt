@@ -1,2 +1,8 @@
 streamlit
+httpx
+nest-asyncio
+better-profanity
+PyPDF2
+python-docx
+python-dotenv
 openai
