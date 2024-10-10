@@ -4,7 +4,9 @@ import httpx
 import nest_asyncio
 from better_profanity import profanity
 from PyPDF2 import PdfReader
+from PyPDF2.errors import PdfReadError
 import docx
+from zipfile import BadZipfile
 from dotenv import load_dotenv
 
 # Apply nest_asyncio to allow nested event loops
@@ -29,16 +31,31 @@ inject_custom_css()
 
 # Function to read and extract text from PDFs
 def extract_text_from_pdf(file):
-    reader = PdfReader(file)
-    text = ""
-    for page in reader.pages:
-        text += page.extract_text()
+    try:
+        reader = PdfReader(file)
+
+        # Raise error if PDF is password protected
+        if reader.is_encrypted:
+            raise ValueError("Encrypted PDF files are not supported.")
+
+        text = ""
+
+        for page in reader.pages:
+            text += page.extract_text()
+    # Forward errors from PdfReader with a user-friendly message
+    except (TypeError, PdfReadError) as e:
+        raise TypeError("Invalid PDF file.")
     return text
 
 # Function to read and extract text from Word documents
 def extract_text_from_word(file):
-    doc = docx.Document(file)
-    return "\n".join([paragraph.text for paragraph in doc.paragraphs])
+    try:
+        doc = docx.Document(file)
+        return "\n".join([paragraph.text for paragraph in doc.paragraphs])
+    except ValueError:
+        raise
+    except BadZipfile as e:
+        raise TypeError("Invalid docx file. File may be password protected or corrupted.")
 
 # Function to load military job codes from the directories (TXT format)
 def load_military_job_codes(base_path):
@@ -126,17 +143,32 @@ def handle_user_input(job_codes):
     uploaded_file = st.file_uploader("Upload your employment-related document (PDF, DOCX)", type=["pdf", "docx"])
 
     if uploaded_file is not None:
-        file_text = ""
-        
-        if uploaded_file.type == "application/pdf":
-            file_text = extract_text_from_pdf(uploaded_file)
-        elif uploaded_file.type == "application/vnd.openxmlformats-officedocument.wordprocessingml.document":
-            file_text = extract_text_from_word(uploaded_file)
+        try:
+            supported_file_types = [
+                "application/pdf",
+                "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+            ]
 
-        # Store the extracted content in session state
-        st.session_state["document_content"] = file_text
+            if uploaded_file.type not in supported_file_types:
+                raise TypeError("Invalid file type.")
 
-        st.success("Document uploaded and processed successfully!")
+            # Limit file uploads to less than 20 MB
+            if uploaded_file.size > 20 * 1024 * 1024:
+                raise ValueError("File size is too large. Uploaded files must be less than 20 MB.")
+
+            file_text = ""
+
+            if uploaded_file.type == "application/pdf":
+                file_text = extract_text_from_pdf(uploaded_file)
+            elif uploaded_file.type == "application/vnd.openxmlformats-officedocument.wordprocessingml.document":
+                file_text = extract_text_from_word(uploaded_file)
+
+            # Store the extracted content in session state
+            st.session_state["document_content"] = file_text
+
+            st.success("Document uploaded and processed successfully!")
+        except (TypeError, ValueError) as e:
+            st.error(e)
 
     # Input field for user queries (job code or general chat) at the bottom
     st.text_input("Enter your military job code (e.g., 11B, AFSC, MOS) or ask a question:", 
