@@ -15,3 +15,5 @@ cachetools>=5.3.2
 dataclasses-json>=0.6.1
 asyncio>=3.4.3
 aiohttp>=3.9.1
+pytest
+pytest-cov
