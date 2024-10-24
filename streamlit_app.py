@@ -21,13 +21,16 @@ load_dotenv()
 # Get the API key from environment variables
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
+
 # Function to inject custom CSS for light mode
 def inject_custom_css():
     st.markdown("""
         <!-- Your existing CSS styles -->
     """, unsafe_allow_html=True)
 
+
 inject_custom_css()
+
 
 # Function to read and extract text from PDFs
 def extract_text_from_pdf(file):
@@ -47,6 +50,7 @@ def extract_text_from_pdf(file):
         raise TypeError("Invalid PDF file.")
     return text
 
+
 # Function to read and extract text from Word documents
 def extract_text_from_word(file):
     try:
@@ -57,15 +61,18 @@ def extract_text_from_word(file):
     except BadZipfile as e:
         raise TypeError("Invalid docx file. File may be password protected or corrupted.")
 
+
 # Function to load military job codes from the directories (TXT format)
 def load_military_job_codes(base_path):
     # Your existing implementation
     pass
 
+
 # Function to translate military job code to civilian job suggestions
 def translate_job_code(job_code, job_codes):
     # Your existing implementation
     pass
+
 
 # Fetch response from OpenAI using the API key with increased timeout
 def fetch_from_model(conversation):
@@ -99,15 +106,16 @@ def fetch_from_model(conversation):
     except httpx.RequestError as e:
         st.error(f"An error occurred while making a request to OpenAI: {e}")
         return "Error communicating with the OpenAI API."
-    
+
     except Exception as e:
         st.error(f"An unexpected error occurred: {e}")
         return "Unexpected error while fetching response."
 
+
 # Callback to process user input and clear it afterward
 def process_input(job_codes):
     user_input = st.session_state["temp_input"]
-    
+
     if user_input:
         # Store user input into chat history
         st.session_state.messages.append({"role": "user", "content": user_input})
@@ -117,7 +125,8 @@ def process_input(job_codes):
 
         # Include document content in the system prompt if available
         if "document_content" in st.session_state and st.session_state["document_content"]:
-            conversation[0]["content"] += f" The user has provided the following document content to assist you: {st.session_state['document_content']}"
+            conversation[0][
+                "content"] += f" The user has provided the following document content to assist you: {st.session_state['document_content']}"
 
         # Append previous messages, being mindful of token limits
         for msg in st.session_state.messages[-10:]:  # Adjust the number of messages as needed
@@ -132,10 +141,11 @@ def process_input(job_codes):
     # Clear the temporary input
     st.session_state["temp_input"] = ""
 
+
 # Handle user input and job code translation along with resume upload
 def handle_user_input(job_codes):
     """Handle user input for translating military job codes to civilian jobs, uploading resumes, and chatting."""
-    
+
     # Display chat messages first
     display_chat_messages()
 
@@ -156,6 +166,8 @@ def handle_user_input(job_codes):
             if uploaded_file.size > 20 * 1024 * 1024:
                 raise ValueError("File size is too large. Uploaded files must be less than 20 MB.")
 
+            print(type(uploaded_file))
+
             file_text = ""
 
             if uploaded_file.type == "application/pdf":
@@ -171,10 +183,11 @@ def handle_user_input(job_codes):
             st.error(e)
 
     # Input field for user queries (job code or general chat) at the bottom
-    st.text_input("Enter your military job code (e.g., 11B, AFSC, MOS) or ask a question:", 
-                  key="temp_input", 
-                  on_change=process_input, 
+    st.text_input("Enter your military job code (e.g., 11B, AFSC, MOS) or ask a question:",
+                  key="temp_input",
+                  on_change=process_input,
                   args=(job_codes,))
+
 
 # Display the app title and description
 def display_title_and_description():
@@ -184,6 +197,7 @@ def display_title_and_description():
         "Welcome to VetsAI, an AI-powered virtual assistant designed "
         "to help veterans navigate employment transitions and find opportunities in civilian careers."
     )
+
 
 # Initialize session state
 def initialize_session_state():
@@ -195,6 +209,7 @@ def initialize_session_state():
     if "document_content" not in st.session_state:
         st.session_state.document_content = ""
 
+
 # Introduce the assistant
 def introduce_assistant():
     """Introduce the VetsAI Assistant."""
@@ -204,6 +219,7 @@ def introduce_assistant():
             "Feel free to ask me anything related to job searching, resume tips, or industries that align with your skills."
         )
         st.session_state.messages.append({"role": "assistant", "content": intro_message})
+
 
 # Display chat history
 def display_chat_messages():
@@ -215,6 +231,7 @@ def display_chat_messages():
         else:
             with st.chat_message("assistant"):
                 st.markdown(f"VetsAI: {message['content']}")
+
 
 # Main function to run the VetsAI Assistant app
 def main():
@@ -230,6 +247,7 @@ def main():
 
     # Handle user input and chat
     handle_user_input(job_codes)
+
 
 if __name__ == "__main__":
     main()
