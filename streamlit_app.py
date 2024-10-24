@@ -1,235 +1,432 @@
 import streamlit as st
 import os
-import httpx
-import nest_asyncio
-from better_profanity import profanity
-from PyPDF2 import PdfReader
-from PyPDF2.errors import PdfReadError
-import docx
-from zipfile import BadZipfile
+import logging
+from typing import Dict, List
+from datetime import datetime
 from dotenv import load_dotenv
+import openai
+import json
+import time
+import hashlib
 
-# Apply nest_asyncio to allow nested event loops
-nest_asyncio.apply()
+# Configure logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.FileHandler('vetsai.log'),
+        logging.StreamHandler()
+    ]
+)
+logger = logging.getLogger(__name__)
 
-# Initialize the better-profanity filter
-profanity.load_censor_words()
-
-# Load the environment variables from .env file
+# Load environment variables
 load_dotenv()
 
-# Get the API key from environment variables
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+# Configure OpenAI
+openai.api_key = os.getenv("OPENAI_API_KEY")
+if not openai.api_key:
+    raise ValueError("OpenAI API key not found in .env file")
 
-# Function to inject custom CSS for light mode
-def inject_custom_css():
-    st.markdown("""
-        <!-- Your existing CSS styles -->
-    """, unsafe_allow_html=True)
-
-inject_custom_css()
-
-# Function to read and extract text from PDFs
-def extract_text_from_pdf(file):
-    try:
-        reader = PdfReader(file)
-
-        # Raise error if PDF is password protected
-        if reader.is_encrypted:
-            raise ValueError("Encrypted PDF files are not supported.")
-
-        text = ""
-
-        for page in reader.pages:
-            text += page.extract_text()
-    # Forward errors from PdfReader with a user-friendly message
-    except (TypeError, PdfReadError) as e:
-        raise TypeError("Invalid PDF file.")
-    return text
-
-# Function to read and extract text from Word documents
-def extract_text_from_word(file):
-    try:
-        doc = docx.Document(file)
-        return "\n".join([paragraph.text for paragraph in doc.paragraphs])
-    except ValueError:
-        raise
-    except BadZipfile as e:
-        raise TypeError("Invalid docx file. File may be password protected or corrupted.")
-
-# Function to load military job codes from the directories (TXT format)
-def load_military_job_codes(base_path):
-    # Your existing implementation
-    pass
-
-# Function to translate military job code to civilian job suggestions
-def translate_job_code(job_code, job_codes):
-    # Your existing implementation
-    pass
-
-# Fetch response from OpenAI using the API key with increased timeout
-def fetch_from_model(conversation):
-    """Send a request to OpenAI using the conversation history."""
-    url = "https://api.openai.com/v1/chat/completions"
-
-    headers = {
-        "Authorization": f"Bearer {OPENAI_API_KEY}",
-        "Content-Type": "application/json"
+def load_military_job_codes() -> dict:
+    """
+    Load military job codes from data directories and map them to software development paths.
+    Directory structure:
+    data/
+        employment_transitions/
+            job_codes/
+                army/
+                air_force/
+                coast_guard/
+                navy/
+                marine_corps/
+    """
+    base_path = "data/employment_transitions/job_codes"
+    job_codes = {}
+    
+    # Map of service branches to their file paths and code prefixes
+    branches = {
+        "army": {"path": "army", "prefix": "MOS"},
+        "air_force": {"path": "air_force", "prefix": "AFSC"},
+        "coast_guard": {"path": "coast_guard", "prefix": "RATE"},
+        "navy": {"path": "navy", "prefix": "RATE"},
+        "marine_corps": {"path": "marine_corps", "prefix": "MOS"}
     }
+    
+    for branch, info in branches.items():
+        branch_path = os.path.join(base_path, info["path"])
+        if os.path.exists(branch_path):
+            for file in os.listdir(branch_path):
+                if file.endswith('.json'):
+                    with open(os.path.join(branch_path, file), 'r') as f:
+                        try:
+                            branch_codes = json.load(f)
+                            # Add VWC specific development paths to each job code
+                            for code, details in branch_codes.items():
+                                vwc_mapping = map_to_vwc_path(details.get('category', ''), 
+                                                            details.get('skills', []))
+                                details.update({
+                                    'vwc_path': vwc_mapping['path'],
+                                    'tech_focus': vwc_mapping['tech_focus'],
+                                    'branch': branch,
+                                    'code_type': info['prefix']
+                                })
+                                job_codes[f"{info['prefix']}_{code}"] = details
+                        except json.JSONDecodeError as e:
+                            logger.error(f"Error loading {file}: {e}")
+                            continue
+    
+    return job_codes
 
-    payload = {
-        "model": "gpt-4o",  # Use 'gpt-3.5-turbo' or 'gpt-4' if available
-        "messages": conversation,
-        "temperature": 0.7,
-        "max_tokens": 5000
+def map_to_vwc_path(category: str, skills: List[str]) -> dict:
+    """Map military job categories and skills to VWC tech stack paths."""
+    
+    # Default full stack path
+    default_path = {
+        "path": "Full Stack Development",
+        "tech_focus": [
+            "JavaScript/TypeScript fundamentals",
+            "Next.js and Tailwind for frontend",
+            "Python with FastAPI/Django for backend"
+        ]
     }
-
-    try:
-        # Set a custom timeout (e.g., 60 seconds) to give more time for OpenAI to respond
-        response = httpx.post(url, headers=headers, json=payload, timeout=60.0)
-        response.raise_for_status()
-
-        json_response = response.json()
-        return json_response['choices'][0]['message']['content']
-
-    except httpx.TimeoutException:
-        st.error("The request to OpenAI timed out. Please try again later.")
-        return "Timeout occurred while waiting for OpenAI response."
-
-    except httpx.RequestError as e:
-        st.error(f"An error occurred while making a request to OpenAI: {e}")
-        return "Error communicating with the OpenAI API."
     
-    except Exception as e:
-        st.error(f"An unexpected error occurred: {e}")
-        return "Unexpected error while fetching response."
-
-# Callback to process user input and clear it afterward
-def process_input(job_codes):
-    user_input = st.session_state["temp_input"]
-    
-    if user_input:
-        # Store user input into chat history
-        st.session_state.messages.append({"role": "user", "content": user_input})
-
-        # Build conversation history for OpenAI API call
-        conversation = [{"role": "system", "content": "You are a helpful assistant for veterans seeking employment."}]
-
-        # Include document content in the system prompt if available
-        if "document_content" in st.session_state and st.session_state["document_content"]:
-            conversation[0]["content"] += f" The user has provided the following document content to assist you: {st.session_state['document_content']}"
-
-        # Append previous messages, being mindful of token limits
-        for msg in st.session_state.messages[-10:]:  # Adjust the number of messages as needed
-            conversation.append(msg)
-
-        # Fetch assistant's response
-        response = fetch_from_model(conversation)
-
-        # Store assistant's response
-        st.session_state.messages.append({"role": "assistant", "content": response})
-
-    # Clear the temporary input
-    st.session_state["temp_input"] = ""
-
-# Handle user input and job code translation along with resume upload
-def handle_user_input(job_codes):
-    """Handle user input for translating military job codes to civilian jobs, uploading resumes, and chatting."""
-    
-    # Display chat messages first
-    display_chat_messages()
-
-    # File uploader for document uploads
-    uploaded_file = st.file_uploader("Upload your employment-related document (PDF, DOCX)", type=["pdf", "docx"])
-
-    if uploaded_file is not None:
-        try:
-            supported_file_types = [
-                "application/pdf",
-                "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    # Category-based mappings
+    tech_paths = {
+        "information_technology": {
+            "path": "Full Stack Development",
+            "tech_focus": [
+                "JavaScript/TypeScript with focus on system architecture",
+                "Next.js for complex web applications",
+                "Python backend services with FastAPI"
             ]
+        },
+        "cyber": {
+            "path": "Security-Focused Development",
+            "tech_focus": [
+                "TypeScript for type-safe applications",
+                "Secure API development with FastAPI/Django",
+                "AI/ML for security applications"
+            ]
+        },
+        "communications": {
+            "path": "Frontend Development",
+            "tech_focus": [
+                "JavaScript/TypeScript specialization",
+                "Advanced Next.js and Tailwind",
+                "API integration with Python backends"
+            ]
+        },
+        "intelligence": {
+            "path": "AI/ML Development",
+            "tech_focus": [
+                "Python for data processing",
+                "ML model deployment with FastAPI",
+                "Next.js for ML application frontends"
+            ]
+        },
+        "maintenance": {
+            "path": "Backend Development",
+            "tech_focus": [
+                "Python backend development",
+                "API design with FastAPI/Django",
+                "Basic frontend with Next.js"
+            ]
+        }
+    }
+    
+    # Skill-based adjustments
+    skill_keywords = {
+        "programming": "software",
+        "database": "data",
+        "network": "communications",
+        "security": "cyber",
+        "analysis": "intelligence"
+    }
+    
+    # Determine best path based on category and skills
+    if category.lower() in tech_paths:
+        return tech_paths[category.lower()]
+    
+    # Check skills for keywords
+    for skill in skills:
+        skill_lower = skill.lower()
+        for keyword, category in skill_keywords.items():
+            if keyword in skill_lower and category in tech_paths:
+                return tech_paths[category]
+    
+    return default_path
 
-            if uploaded_file.type not in supported_file_types:
-                raise TypeError("Invalid file type.")
+def translate_military_code(code: str, job_codes: dict) -> dict:
+    """Translate military code to VWC development path."""
+    # Clean and standardize input
+    code = code.upper().strip()
+    
+    # Remove common prefixes if provided
+    prefixes = ["MOS", "AFSC", "RATE"]
+    for prefix in prefixes:
+        if code.startswith(prefix):
+            code = code.replace(prefix, "").strip()
+    
+    # Try different prefix combinations
+    possible_codes = [
+        f"MOS_{code}",
+        f"AFSC_{code}",
+        f"RATE_{code}"
+    ]
+    
+    for possible_code in possible_codes:
+        if possible_code in job_codes:
+            job_data = job_codes[possible_code]
+            return {
+                "found": True,
+                "data": {
+                    "title": job_data.get('title', 'Military Professional'),
+                    "branch": job_data.get('branch', 'Military'),
+                    "dev_path": job_data.get('vwc_path', 'Full Stack Development'),
+                    "tech_focus": job_data.get('tech_focus', []),
+                    "skills": job_data.get('skills', [])
+                }
+            }
+    
+    # Default response for unknown codes
+    return {
+        "found": False,
+        "data": {
+            "title": "Military Professional",
+            "branch": "Military",
+            "dev_path": "Full Stack Development",
+            "tech_focus": [
+                "Start with JavaScript/TypeScript fundamentals",
+                "Build projects with Next.js and Tailwind",
+                "Learn Python backend development with FastAPI"
+            ],
+            "skills": [
+                "Leadership and team coordination",
+                "Problem-solving and adaptation",
+                "Project planning and execution"
+            ]
+        }
+    }
 
-            # Limit file uploads to less than 20 MB
-            if uploaded_file.size > 20 * 1024 * 1024:
-                raise ValueError("File size is too large. Uploaded files must be less than 20 MB.")
-
-            file_text = ""
-
-            if uploaded_file.type == "application/pdf":
-                file_text = extract_text_from_pdf(uploaded_file)
-            elif uploaded_file.type == "application/vnd.openxmlformats-officedocument.wordprocessingml.document":
-                file_text = extract_text_from_word(uploaded_file)
-
-            # Store the extracted content in session state
-            st.session_state["document_content"] = file_text
-
-            st.success("Document uploaded and processed successfully!")
-        except (TypeError, ValueError) as e:
-            st.error(e)
-
-    # Input field for user queries (job code or general chat) at the bottom
-    st.text_input("Enter your military job code (e.g., 11B, AFSC, MOS) or ask a question:", 
-                  key="temp_input", 
-                  on_change=process_input, 
-                  args=(job_codes,))
-
-# Display the app title and description
-def display_title_and_description():
-    """Display the app title and description."""
-    st.title("🇺🇸 VetsAI: Employment Assistance for Veterans")
-    st.write(
-        "Welcome to VetsAI, an AI-powered virtual assistant designed "
-        "to help veterans navigate employment transitions and find opportunities in civilian careers."
-    )
-
-# Initialize session state
-def initialize_session_state():
-    """Initialize session state variables for messages and chat history."""
-    if "messages" not in st.session_state:
-        st.session_state.messages = []
-    if "temp_input" not in st.session_state:
-        st.session_state.temp_input = ""
-    if "document_content" not in st.session_state:
-        st.session_state.document_content = ""
-
-# Introduce the assistant
-def introduce_assistant():
-    """Introduce the VetsAI Assistant."""
-    if not st.session_state.messages:
-        intro_message = (
-            "Hi, I'm VetsAI! I'm here to assist you in finding employment opportunities and transitioning into civilian careers. "
-            "Feel free to ask me anything related to job searching, resume tips, or industries that align with your skills."
+def get_chat_response(messages: List[Dict]) -> str:
+    """Get response from OpenAI chat completion."""
+    try:
+        response = openai.chat.completions.create(
+            model="gpt-4",
+            messages=messages,
+            temperature=0.7,
         )
-        st.session_state.messages.append({"role": "assistant", "content": intro_message})
+        return response.choices[0].message.content
+    except openai.OpenAIError as e:
+        logger.error(f"OpenAI API error: {e}")
+        raise
+    except Exception as e:
+        logger.error(f"Unexpected error in chat completion: {e}")
+        raise
 
-# Display chat history
-def display_chat_messages():
-    """Display existing chat messages stored in session state."""
-    for message in st.session_state["messages"]:
-        if message["role"] == "user":
-            with st.chat_message("user"):
-                st.markdown(f"You: {message['content']}")
+def export_chat_history(chat_history: List[Dict]) -> str:
+    """Export chat history to JSON."""
+    export_data = {
+        "timestamp": datetime.now().isoformat(),
+        "messages": chat_history
+    }
+    return json.dumps(export_data, indent=2)
+
+def save_feedback(feedback: Dict):
+    """Save user feedback to file."""
+    feedback_dir = "feedback"
+    os.makedirs(feedback_dir, exist_ok=True)
+    
+    feedback_file = os.path.join(
+        feedback_dir,
+        f"feedback_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
+    )
+    
+    with open(feedback_file, 'w') as f:
+        json.dump(feedback, f, indent=2)
+
+def handle_command(command: str) -> str:
+    """Handle special commands including MOS translation."""
+    parts = command.lower().split()
+    if not parts:
+        return None
+        
+    cmd = parts[0]
+    if cmd in ['/mos', '/afsc', '/rate']:
+        if len(parts) < 2:
+            return "Please provide a military job code. Example: `/mos 25B`"
+            
+        code = parts[1]
+        translation = translate_military_code(code, st.session_state.job_codes)
+        if translation['found']:
+            return (
+                f"🎖️ **{translation['data']['title']}** ({translation['data']['branch']})\n\n"
+                f"💻 **VWC Development Path**: {translation['data']['dev_path']}\n\n"
+                "🔧 **Military Skills**:\n" +
+                "\n".join(f"- {skill}" for skill in translation['data']['skills']) +
+                "\n\n📚 **VWC Tech Focus**:\n" +
+                "\n".join(f"{i+1}. {focus}" for i, focus in enumerate(translation['data']['tech_focus']))
+            )
         else:
-            with st.chat_message("assistant"):
-                st.markdown(f"VetsAI: {message['content']}")
+            return (
+                "I don't have that specific code in my database, but here's a recommended "
+                "VWC learning path based on general military experience:\n\n" +
+                "\n".join(f"{i+1}. {focus}" for i, focus in enumerate(translation['data']['tech_focus']))
+            )
+    
+    return None
 
-# Main function to run the VetsAI Assistant app
+def initialize_chat():
+    """Initialize the chat with a VWC-focused welcome message."""
+    welcome_message = {
+        "role": "assistant",
+        "content": (
+            "Welcome to VetsAI - Your Vets Who Code Assistant! 👨‍💻\n\n"
+            "I'm here to help you with:\n\n"
+            "🔹 VWC Tech Stack:\n"
+            "- JavaScript/TypeScript\n"
+            "- Python (FastAPI, Flask, Django)\n"
+            "- Next.js & Tailwind CSS\n"
+            "- AI/ML Integration\n\n"
+            "🔹 Commands:\n"
+            "- `/mos [code]` - Translate your MOS to dev path\n"
+            "- `/afsc [code]` - Translate your AFSC to dev path\n"
+            "- `/rate [code]` - Translate your Rate to dev path\n"
+            "- `/frontend` - Help with JS/TS/Next.js\n"
+            "- `/backend` - Help with Python frameworks\n"
+            "- `/ai` - AI/ML guidance\n\n"
+            "Let's start by checking how your military experience "
+            "aligns with software development! Share your MOS/AFSC/Rate, "
+            "or ask about any part of our tech stack."
+        )
+    }
+    return [welcome_message]
+
 def main():
-    """Main function to run the VetsAI Assistant app."""
-    display_title_and_description()
-    initialize_session_state()
-
-    # Load the military job codes from the 'data/employment_transitions/job_codes' directory
-    job_codes = load_military_job_codes("./data/employment_transitions/job_codes")
-
-    # Ensure the assistant introduces itself only once
-    introduce_assistant()
-
-    # Handle user input and chat
-    handle_user_input(job_codes)
+    """Main application function."""
+    st.title("🇺🇸 VetsAI: Vets Who Code Assistant")
+    
+    # Initialize session
+    if 'session_id' not in st.session_state:
+        st.session_state.session_id = hashlib.md5(
+            str(time.time()).encode()
+        ).hexdigest()
+    
+    # Load military job codes
+    if 'job_codes' not in st.session_state:
+        try:
+            st.session_state.job_codes = load_military_job_codes()
+        except Exception as e:
+            logger.error(f"Error loading job codes: {e}")
+            st.session_state.job_codes = {}
+    
+    if 'messages' not in st.session_state:
+        st.session_state.messages = initialize_chat()
+    
+    # Add sidebar with VWC tech stack resources
+    with st.sidebar:
+        st.markdown("""
+        ### VWC Tech Stack
+        
+        🌐 **Frontend**
+        - JavaScript/TypeScript
+        - CSS & Tailwind
+        - Next.js
+        
+        ⚙️ **Backend**
+        - Python
+        - FastAPI
+        - Flask
+        - Django
+        
+        🤖 **AI/ML Integration**
+        - Machine Learning
+        - AI Applications
+        
+        🎖️ **Military Translation**
+        `/mos [code]` - Army/Marines
+        `/afsc [code]` - Air Force
+        `/rate [code]` - Navy/Coast Guard
+        """)
+    
+    # Chat interface
+    for message in st.session_state.messages:
+        with st.chat_message(message["role"]):
+            st.markdown(message["content"])
+    
+    if prompt := st.chat_input():
+        # Add user message
+        st.session_state.messages.append({"role": "user", "content": prompt})
+        with st.chat_message("user"):
+            st.markdown(prompt)
+        
+        # Check for commands first
+        if prompt.startswith('/'):
+            command_response = handle_command(prompt)
+            if command_response:
+                with st.chat_message("assistant"):
+                    st.markdown(command_response)
+                st.session_state.messages.append({
+                    "role": "assistant",
+                    "content": command_response
+                })
+                return
+        
+        # Generate and display assistant response
+        with st.chat_message("assistant"):
+            try:
+                messages = st.session_state.messages.copy()
+                messages.insert(0, {
+                    "role": "system",
+                    "content": (
+                        "You are a specialized AI assistant for Vets Who Code troops. "
+                        "Focus specifically on our tech stack: JavaScript, TypeScript, "
+                        "Python, CSS, Tailwind, FastAPI, Flask, Next.js, Django, and AI/ML. "
+                        "Always reference these specific technologies in your answers. "
+                        "Remember all users are VWC troops learning our stack."
+                    )
+                })
+                
+                response = get_chat_response(messages)
+                st.markdown(response)
+                
+                st.session_state.messages.append({
+                    "role": "assistant",
+                    "content": response
+                })
+            except Exception as e:
+                st.error(f"Error generating response: {str(e)}")
+    
+    # Export chat history
+    if st.button("Export Chat History"):
+        chat_export = export_chat_history(st.session_state.messages)
+        st.download_button(
+            "Download Chat History",
+            chat_export,
+            "vetsai_chat_history.json",
+            "application/json"
+        )
+    
+    # Feedback mechanism
+    with st.expander("Provide Feedback"):
+        feedback_rating = st.slider(
+            "Rate your experience (1-5)",
+            min_value=1,
+            max_value=5,
+            value=5
+        )
+        feedback_text = st.text_area("Additional feedback")
+        
+        if st.button("Submit Feedback"):
+            feedback = {
+                "timestamp": datetime.now().isoformat(),
+                "session_id": st.session_state.session_id,
+                "rating": feedback_rating,
+                "feedback": feedback_text
+            }
+            save_feedback(feedback)
+            st.success("Thank you for your feedback!")
 
 if __name__ == "__main__":
     main()
