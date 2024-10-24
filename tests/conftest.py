@@ -6,9 +6,8 @@ TEST_RESOURCE_DIR = f"{os.path.dirname(__file__)}/resources"
 
 
 def load_resource_file(file_name):
-    file = open(file_name, "rb")
-    data = io.BytesIO(file.read())
-    file.close()
+    with open(file_name, "rb") as file:
+        data = io.BytesIO(file.read())
     return data
 
 
