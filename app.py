@@ -28,19 +28,67 @@ openai.api_key = os.getenv("OPENAI_API_KEY")
 if not openai.api_key:
     raise ValueError("OpenAI API key not found in .env file")
 
+def parse_mos_file(file_content: str) -> dict:
+    """
+    Parse military job code text file content into a structured dictionary.
+    
+    Args:
+        file_content: Raw text content of the MOS file
+        
+    Returns:
+        dict: Structured data including title, category, and skills
+    """
+    lines = file_content.strip().split('\n')
+    
+    job_code = ""
+    title = ""
+    description = []
+    parsing_description = False
+    
+    for line in lines:
+        line = line.strip()
+        if not line:
+            continue
+            
+        if line.startswith("Job Code:"):
+            job_code = line.replace("Job Code:", "").strip()
+        elif line.startswith("Description:"):
+            parsing_description = True
+        elif parsing_description:
+            description.append(line)
+    
+    # Get the first non-empty description line as title
+    for line in description:
+        if line:
+            title = line
+            break
+    
+    # Combine all description text for category analysis
+    full_text = ' '.join(description).lower()
+    
+    # More comprehensive category detection
+    category = "general"
+    category_keywords = {
+        "information_technology": ["technology", "computer", "network", "data", "software", "hardware", "system", "database"],
+        "communications": ["communications", "signal", "radio", "transmission", "telecom"],
+        "intelligence": ["intelligence", "analysis", "surveillance", "reconnaissance"],
+        "maintenance": ["maintenance", "repair", "technical", "equipment"],
+        "cyber": ["cyber", "security", "information assurance", "cryptographic"]
+    }
+    
+    # Check for category keywords in the full text
+    for cat, keywords in category_keywords.items():
+        if any(keyword in full_text for keyword in keywords):
+            category = cat
+            break
+    
+    return {
+        "title": title or "Military Professional",
+        "category": category,
+        "skills": [line for line in description if line and len(line) > 10]
+    }
+
 def load_military_job_codes() -> dict:
-    """
-    Load military job codes from data directories and map them to software development paths.
-    Directory structure:
-    data/
-        employment_transitions/
-            job_codes/
-                army/
-                air_force/
-                coast_guard/
-                navy/
-                marine_corps/
-    """
     base_path = "data/employment_transitions/job_codes"
     job_codes = {}
     
@@ -57,27 +105,28 @@ def load_military_job_codes() -> dict:
         branch_path = os.path.join(base_path, info["path"])
         if os.path.exists(branch_path):
             for file in os.listdir(branch_path):
-                if file.endswith('.json'):
-                    with open(os.path.join(branch_path, file), 'r') as f:
-                        try:
-                            branch_codes = json.load(f)
-                            # Add VWC specific development paths to each job code
-                            for code, details in branch_codes.items():
-                                vwc_mapping = map_to_vwc_path(details.get('category', ''), 
-                                                            details.get('skills', []))
-                                details.update({
-                                    'vwc_path': vwc_mapping['path'],
-                                    'tech_focus': vwc_mapping['tech_focus'],
-                                    'branch': branch,
-                                    'code_type': info['prefix']
-                                })
-                                job_codes[f"{info['prefix']}_{code}"] = details
-                        except json.JSONDecodeError as e:
-                            logger.error(f"Error loading {file}: {e}")
-                            continue
+                if file.endswith('.txt'):  # Changed from .json to .txt
+                    try:
+                        with open(os.path.join(branch_path, file), 'r') as f:
+                            content = f.read()
+                            code = file.replace('.txt', '')
+                            details = parse_mos_file(content)
+                            
+                            # Add VWC specific development paths
+                            vwc_mapping = map_to_vwc_path(details.get('category', ''), 
+                                                        details.get('skills', []))
+                            details.update({
+                                'vwc_path': vwc_mapping['path'],
+                                'tech_focus': vwc_mapping['tech_focus'],
+                                'branch': branch,
+                                'code_type': info['prefix']
+                            })
+                            job_codes[f"{info['prefix']}_{code}"] = details
+                    except Exception as e:
+                        logger.error(f"Error loading {file}: {e}")
+                        continue
     
     return job_codes
-
 def map_to_vwc_path(category: str, skills: List[str]) -> dict:
     """Map military job categories and skills to VWC tech stack paths."""
     
@@ -213,7 +262,7 @@ def get_chat_response(messages: List[Dict]) -> str:
     """Get response from OpenAI chat completion."""
     try:
         response = openai.chat.completions.create(
-            model="gpt-4",
+            model="gpt-4o",
             messages=messages,
             temperature=0.7,
         )
