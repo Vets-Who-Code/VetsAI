@@ -18,3 +18,9 @@ def file_resources():
     for filename in os.listdir(TEST_RESOURCE_DIR):
         library[filename.split(".")[0]] = load_resource_file(f"{TEST_RESOURCE_DIR}/{filename}")
     yield library
+
+
+def pytest_configure(config):
+    config.addinivalue_line(
+        "markers", "slow: marks tests as slow (deselect with '-m \"not slow\"')"
+    )
