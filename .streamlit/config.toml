@@ -1,3 +1,10 @@
 [server]
 # Limit uploads to 20 MB
 maxUploadSize = 20
+
+[theme]
+primaryColor = "#c5203e"  # Red
+backgroundColor = "#ffffff"  # White
+secondaryBackgroundColor = "#091f40"  # Navy Blue
+textColor = "#091f40"  # Navy Blue for text
+font = "sans serif"

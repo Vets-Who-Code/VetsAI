@@ -9,6 +9,144 @@ import json
 import time
 import hashlib
 
+# Configure page settings and styling
+st.set_page_config(
+    page_title="🇺🇸 VetsAI: Vets Who Code Assistant",
+    page_icon="🇺🇸",
+    layout="wide",
+)
+
+# Define VWC brand colors and add custom CSS
+st.markdown("""
+    <style>
+    /* VWC Brand Colors */
+    :root {
+        --navy-blue: #091f40;
+        --red: #c5203e;
+        --white: #ffffff;
+    }
+
+    /* Main app styling */
+
+        code {
+        padding: 0.2em 0.4em;
+        margin: 0px;
+        border-radius: 0.25rem;
+        background: rgb(132, 143, 160);
+        color: #ffffff;  /* Changed to white for better contrast */
+    }
+
+    /* For inline code */
+    .markdown-text-container code {
+        background: #091f40;  /* Navy blue background */
+        color: #ffffff;  /* White text */
+        padding: 0.2em 0.4em;
+        border-radius: 0.25rem;
+    }
+
+    .stApp {
+        background-color: var(--white);
+    }
+
+    /* Header styling */
+    .stTitle, h1, h2, h3 {
+        color: var(--navy-blue) !important;
+        font-weight: 600;
+    }
+
+    /* Sidebar styling */
+    section[data-testid="stSidebar"] {
+        background-color: var(--navy-blue);
+    }
+    
+    section[data-testid="stSidebar"] .stMarkdown {
+        color: var(--white);
+    }
+    
+    section[data-testid="stSidebar"] h3 {
+        color: var(--white) !important;
+    }
+
+    /* Button styling */
+    .stButton > button {
+        background-color: var(--red);
+        color: var(--white);
+        border: none;
+        border-radius: 4px;
+        padding: 0.5rem 1rem;
+        transition: background-color 0.3s ease;
+    }
+
+    .stButton > button:hover {
+        background-color: var(--navy-blue);
+    }
+
+    /* Chat message styling */
+    .stChatMessage {
+        background-color: rgba(9, 31, 64, 0.05);
+        border-radius: 8px;
+        padding: 1rem;
+        margin: 0.5rem 0;
+    }
+
+    /* Slider styling */
+    .stSlider div[data-baseweb="slider"] div {
+        background-color: var(--red);
+    }
+
+    /* Expander styling */
+    .streamlit-expanderHeader {
+        background-color: var(--navy-blue);
+        color: var(--white);
+        border-radius: 4px;
+    }
+
+    /* Chat input styling */
+    .stChatInputContainer {
+        border-color: var(--navy-blue);
+    }
+
+        /* Chat input text color */
+    .st-bt {
+        color: var(--white) !important;
+    }
+
+    /* Chat input textarea */
+    textarea[data-testid="stChatInputTextArea"] {
+        color: var(--white) !important;
+    }
+    
+    /* Chat input placeholder */
+    textarea[data-testid="stChatInputTextArea"]::placeholder {
+        color: rgba(255, 255, 255, 0.6) !important;
+    }
+    
+    /* Success message styling */
+    .stSuccess {
+        background-color: var(--navy-blue);
+        color: var(--white);
+    }
+
+    /* Error message styling */
+    .stError {
+        background-color: var(--red);
+        color: var(--white);
+    }
+
+    /* Download button styling */
+    .stDownloadButton > button {
+        background-color: var(--navy-blue);
+        color: var(--white);
+        border: none;
+        padding: 0.5rem 1rem;
+    }
+
+    .stDownloadButton > button:hover {
+        background-color: var(--red);
+    }
+    </style>
+""", unsafe_allow_html=True)
+
 # Configure logging
 logging.basicConfig(
     level=logging.INFO,
