@@ -1,4 +1,6 @@
 [server]
+enableCORS = false
+enableXsrfProtection = false
 # Limit uploads to 20 MB
 maxUploadSize = 20
 
