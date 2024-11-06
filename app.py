@@ -161,10 +161,14 @@ logger = logging.getLogger(__name__)
 # Load environment variables
 load_dotenv()
 
-# Configure OpenAI
-openai.api_key = os.getenv("OPENAI_API_KEY")
+openai.api_key = st.secrets["openai"]["OPENAI_API_KEY"]
+
+# Optionally, load the model name if needed
+model_name = st.secrets["openai"].get("model_name", "default_model_name")
+
+# Test the setup
 if not openai.api_key:
-    raise ValueError("OpenAI API key not found in .env file")
+    raise ValueError("OpenAI API key not found in Streamlit secrets.")
 
 def parse_mos_file(file_content: str) -> dict:
     """
