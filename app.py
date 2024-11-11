@@ -492,7 +492,6 @@ def main():
 - **AI Applications**: Integrating AI models and APIs in applications, including OpenAI GPT models.
 
 #### 📊 Data & Visualization
-- **Streamlit**: For building interactive data apps quickly and easily.
 - **Pandas**: Data manipulation and analysis.
 - **Matplotlib & Plotly**: Data visualization libraries for generating plots and charts.
 
