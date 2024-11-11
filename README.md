@@ -78,4 +78,4 @@ The following Python libraries are required to run this app:
 
 ## License
 
-This project is licensed under the MIT License.
+This project is licensed under the Apache License.

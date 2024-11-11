@@ -8,5 +8,5 @@ maxUploadSize = 20
 primaryColor = "#c5203e"  # Red
 backgroundColor = "#ffffff"  # White
 secondaryBackgroundColor = "#091f40"  # Navy Blue
-textColor = "#091f40"  # Navy Blue for text
+textColor = "#000000"  # Black for visibility
 font = "sans serif"
