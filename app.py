@@ -610,15 +610,15 @@ with st.chat_message("assistant"):
             )
         })
                 
-                response = get_chat_response(messages)
-                st.markdown(response)
+        response = get_chat_response(messages)
+        st.markdown(response)
                 
-                st.session_state.messages.append({
-                    "role": "assistant",
-                    "content": response
-                })
-            except Exception as e:
-                st.error(f"Error generating response: {str(e)}")
+        st.session_state.messages.append({
+            "role": "assistant",
+            "content": response
+        })
+    except Exception as e:
+        st.error(f"Error generating response: {str(e)}")
     
     # Export chat history
     if st.button("Export Chat History"):
