@@ -49,7 +49,7 @@ st.markdown("""
     }
 
     /* Header styling */
-    .stTitle, h1, h2, h3, h4 {
+    .stTitle, h1, h2, h3 {
         color: var(--navy-blue) !important;
         font-weight: 600;
     }
@@ -64,6 +64,10 @@ st.markdown("""
     }
     
     section[data-testid="stSidebar"] h3 {
+        color: var(--white) !important;
+    }
+
+        section[data-testid="stSidebar"] h4 {
         color: var(--white) !important;
     }
 
@@ -437,7 +441,7 @@ def initialize_chat():
             "I'm here to help you with:\n\n"
             "🔹 VWC Tech Stack:\n"
             "- JavaScript/TypeScript\n"
-            "- Python (FastAPI, Flask, Django)\n"
+            "- Python (FastAPI, Streamlit)\n"
             "- Next.js & Tailwind CSS\n"
             "- AI/ML Integration\n\n"
             "🔹 Commands:\n"
