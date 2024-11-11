@@ -474,7 +474,39 @@ def main():
     
     # Sidebar with VWC tech stack resources
     with st.sidebar:
-        st.markdown("### VWC Tech Stack\n- JavaScript/TypeScript\n- Python\n...")
+        st.markdown("""
+### VWC Tech Stack
+
+#### 🌐 Frontend
+- **JavaScript/TypeScript**: For building scalable, maintainable codebases.
+- **CSS & Tailwind CSS**: For styling and responsive design.
+- **Next.js**: React framework for server-side rendering and static web applications.
+
+#### ⚙️ Backend
+- **Python**: Core language for backend development and data processing.
+- **FastAPI**: For building fast, asynchronous APIs with Python.
+- **Streamlit**: Framework for creating data-driven apps and interactive visualizations in Python.
+
+#### 🤖 AI/ML Integration
+- **Machine Learning (ML)**: Tools and frameworks for model development.
+- **AI Applications**: Integrating AI models and APIs in applications, including OpenAI GPT models.
+
+#### 📊 Data & Visualization
+- **Streamlit**: For building interactive data apps quickly and easily.
+- **Pandas**: Data manipulation and analysis.
+- **Matplotlib & Plotly**: Data visualization libraries for generating plots and charts.
+
+#### 🛠️ DevOps and Tooling
+- **Git & GitHub**: Version control and collaborative code management.
+- **Docker**: Containerization for consistent development and deployment.
+- **VS Code**: Development environment setup with extensions for Python, JavaScript, etc.
+
+#### 🧪 Testing
+- **Jest**: JavaScript testing framework for frontend applications.
+- **Pytest**: Testing framework for Python applications, with extensive plugin support.
+- **Coverage.py**: For measuring code coverage in Python projects.
+
+""", unsafe_allow_html=True)
 
     # Display chat messages
     for message in st.session_state.messages:
