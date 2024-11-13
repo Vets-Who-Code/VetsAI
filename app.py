@@ -75,9 +75,9 @@ st.markdown("""
     }
 
        /* Style chat input text color */
-    .stTextInput input, .stTextInput textarea {
-        color: white !important;
-    }
+    .stChatInput > div > textarea::placeholder {
+            color: rgba(255, 255, 255, 0.6) !important;
+        }
     
     /* Style placeholder text color */
     .stTextInput input::placeholder, .stTextInput textarea::placeholder {
