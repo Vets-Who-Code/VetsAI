@@ -69,7 +69,7 @@ st.markdown("""
         padding: 0.2em 0.4em;
         margin: 0px;
         border-radius: 0.25rem;
-        background: rgb(--navy-blue);
+        background: var(--navy-blue);
         color: var(--white) !important;
         overflow-wrap: break-word;
     }
