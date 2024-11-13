@@ -8,5 +8,6 @@ maxUploadSize = 20
 primaryColor = "#c5203e"  # Red
 backgroundColor = "#ffffff"  # White
 secondaryBackgroundColor = "#091f40"  # Navy Blue
-textColor = "#000000"  # Black for visibility
+textColor = "#000000"  # Black for main content
+secondaryTextColor = "#ffffff"  # White for sidebar text
 font = "sans serif"

@@ -25,7 +25,32 @@ st.markdown("""
         --red: #c5203e;
         --white: #ffffff;
     }
-    ...
+    
+    /* Sidebar styles */
+    [data-testid="stSidebarUserContent"] {
+        color: var(--white) !important;
+    }
+    
+    [data-testid="stSidebarUserContent"] .stMarkdown {
+        color: var(--white) !important;
+    }
+    
+    /* Make sidebar headers and text white */
+    [data-testid="stSidebarUserContent"] h1,
+    [data-testid="stSidebarUserContent"] h2,
+    [data-testid="stSidebarUserContent"] h3,
+    [data-testid="stSidebarUserContent"] h4,
+    [data-testid="stSidebarUserContent"] h5,
+    [data-testid="stSidebarUserContent"] h6,
+    [data-testid="stSidebarUserContent"] p,
+    [data-testid="stSidebarUserContent"] li {
+        color: var(--white) !important;
+    }
+    
+    /* Style strong tags in sidebar */
+    [data-testid="stSidebarUserContent"] strong {
+        color: var(--white) !important;
+    }
     </style>
 """, unsafe_allow_html=True)
 
