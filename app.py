@@ -51,6 +51,16 @@ st.markdown("""
     [data-testid="stSidebarUserContent"] strong {
         color: var(--white) !important;
     }
+
+        code {
+        font-family: "Source Code Pro", monospace;
+        padding: 0.2em 0.4em;
+        margin: 0px;
+        border-radius: 0.25rem;
+        background: rgb(132, 143, 160);
+        color: var(--white) !important;
+        overflow-wrap: break-word;
+    }
     </style>
 """, unsafe_allow_html=True)
 
