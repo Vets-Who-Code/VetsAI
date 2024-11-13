@@ -76,7 +76,7 @@ st.markdown("""
 
        /* Style chat input text color */
     .stChatInput > div > textarea::placeholder {
-            color: rgba(255, 255, 255, 0.6) !important;
+            color: var(--white) !important;
         }
     
     /* Style placeholder text color */
