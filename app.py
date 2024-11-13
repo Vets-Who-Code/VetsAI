@@ -81,7 +81,7 @@ st.markdown("""
     
     /* Style placeholder text color */
     .stTextInput input::placeholder, .stTextInput textarea::placeholder {
-        color: rgba(255, 255, 255, 0.6) !important;
+        color: var(--white);
     }
     </style>
 """, unsafe_allow_html=True)
