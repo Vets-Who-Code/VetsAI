@@ -47,7 +47,7 @@ load_dotenv()
 client = OpenAI(api_key=st.secrets["openai"]["OPENAI_API_KEY"])
 
 # Test the setup
-if not openai.api_key:
+if not client.api_key:  # Changed from openai.api_key to client.api_key
     raise ValueError("OpenAI API key not found in Streamlit secrets.")
 
 def parse_mos_file(file_content: str) -> dict:
