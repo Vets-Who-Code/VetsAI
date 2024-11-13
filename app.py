@@ -74,14 +74,21 @@ st.markdown("""
         overflow-wrap: break-word;
     }
 
-       /* Style chat input text color */
-    .stChatInput > div > textarea::placeholder {
-            color: var(--white) !important;
-        }
+ /* Target both placeholder and actual text */
+    .stChatInput textarea,
+    .stChatInput textarea::placeholder,
+    .stChatInput textarea:not(:placeholder-shown) {
+        color: white !important;
+    }
     
-    /* Style placeholder text color */
-    .stTextInput input::placeholder, .stTextInput textarea::placeholder {
-        color: var(--white);
+    /* Force text color for active input */
+    .stChatInput textarea:focus {
+        color: white !important;
+    }
+    
+    /* Target the wrapper to ensure color inheritance */
+    [data-testid="stChatInput"] > div {
+        color: white !important;
     }
     </style>
 """, unsafe_allow_html=True)
