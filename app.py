@@ -25,129 +25,7 @@ st.markdown("""
         --red: #c5203e;
         --white: #ffffff;
     }
-
-    /* Main app styling */
-
-    code {
-        padding: 0.2em 0.4em;
-        margin: 0px;
-        border-radius: 0.25rem;
-        background: rgb(132, 143, 160);
-        color: #ffffff;
-    }
-
-    /* For inline code */
-    .markdown-text-container code {
-        background: #091f40;
-        color: #ffffff;
-        padding: 0.2em 0.4em;
-        border-radius: 0.25rem;
-    }
-
-    .stApp {
-        background-color: var(--white);
-    }
-
-    /* Header styling */
-    .stTitle, h1, h2, h3 {
-        color: var(--navy-blue) !important;
-        font-weight: 600;
-    }
-
-    /* Sidebar styling */
-    section[data-testid="stSidebar"] {
-        background-color: var(--navy-blue);
-    }
-    
-    section[data-testid="stSidebar"] .stMarkdown {
-        color: var(--white);
-    }
-    
-    section[data-testid="stSidebar"] h3 {
-        color: var(--white) !important;
-    }
-
-        section[data-testid="stSidebar"] h4 {
-        color: var(--white) !important;
-    }
-
-    /* Button styling */
-    .stButton > button {
-        background-color: var(--red);
-        color: var(--white);
-        border: none;
-        border-radius: 4px;
-        padding: 0.5rem 1rem;
-        transition: background-color 0.3s ease;
-    }
-
-    .stButton > button:hover {
-        background-color: var(--navy-blue);
-    }
-
-    /* Chat message styling */
-    .stChatMessage {
-        background-color: rgba(9, 31, 64, 0.05);
-        border-radius: 8px;
-        padding: 1rem;
-        margin: 0.5rem 0;
-    }
-
-    /* Slider styling */
-    .stSlider div[data-baseweb="slider"] div {
-        background-color: var(--red);
-    }
-
-    /* Expander styling */
-    .streamlit-expanderHeader {
-        background-color: var(--navy-blue);
-        color: var(--white);
-        border-radius: 4px;
-    }
-
-    /* Chat input styling */
-    .stChatInputContainer {
-        border-color: var(--navy-blue);
-    }
-
-    /* Chat input text color */
-    .st-bt {
-        color: var(--white) !important;
-    }
-
-    /* Chat input textarea */
-    textarea[data-testid="stChatInputTextArea"] {
-        color: var(--white) !important;
-    }
-    
-    /* Chat input placeholder */
-    textarea[data-testid="stChatInputTextArea"]::placeholder {
-        color: rgba(255, 255, 255, 0.6) !important;
-    }
-    
-    /* Success message styling */
-    .stSuccess {
-        background-color: var(--navy-blue);
-        color: var(--white);
-    }
-
-    /* Error message styling */
-    .stError {
-        background-color: var(--red);
-        color: var(--white);
-    }
-
-    /* Download button styling */
-    .stDownloadButton > button {
-        background-color: var(--navy-blue);
-        color: var(--white);
-        border: none;
-        padding: 0.5rem 1rem;
-    }
-
-    .stDownloadButton > button:hover {
-        background-color: var(--red);
-    }
+    ...
     </style>
 """, unsafe_allow_html=True)
 
@@ -164,10 +42,9 @@ logger = logging.getLogger(__name__)
 
 # Load environment variables
 load_dotenv()
-openai.api_key = st.secrets["openai"]["OPENAI_API_KEY"]
 
 # Optionally, load the model name if needed
-model_name = st.secrets["openai"].get("model_name", "default_model_name")
+client = OpenAI(api_key=st.secrets["openai"]["OPENAI_API_KEY"])
 
 # Test the setup
 if not openai.api_key:
@@ -369,17 +246,14 @@ def translate_military_code(code: str, job_codes: dict) -> dict:
 def get_chat_response(messages: List[Dict]) -> str:
     """Get response from OpenAI chat completion."""
     try:
-        response = openai.ChatCompletion.create(
+        response = client.chat.completions.create(
             model="gpt-4",
             messages=messages,
             temperature=0.7,
         )
         return response.choices[0].message.content
-    except openai.OpenAIError as e:
-        logger.error(f"OpenAI API error: {e}")
-        raise
     except Exception as e:
-        logger.error(f"Unexpected error in chat completion: {e}")
+        logger.error(f"OpenAI API error: {e}")
         raise
 
 def export_chat_history(chat_history: List[Dict]) -> str:
@@ -541,8 +415,42 @@ def main():
                 messages.insert(0, {
                     "role": "system",
                     "content": (
-                        "You are a specialized AI assistant for Vets Who Code members, "
-                        "designed to provide clear, practical technical guidance for veterans."
+                        "You are a specialized AI assistant for Vets Who Code members, designed to provide clear, practical technical guidance "
+                        "to veterans transitioning into software development careers.\n\n"
+                        
+                        "CORE TECH STACK:\n"
+                        "- Frontend: JavaScript, TypeScript, React, Next.js\n"
+                        "- Styling: CSS, Tailwind CSS\n"
+                        "- Backend: Python, FastAPI\n"
+                        "- Data & Visualization: Streamlit\n"
+                        "- Advanced: AI/ML fundamentals\n"
+                        "- Development Tools: Git, GitHub, VS Code\n"
+                        "- Testing: Jest, Pytest\n\n"
+                        
+                        "CAREER TRANSITION GUIDANCE:\n"
+                        "1. Resume Development:\n"
+                        "   - Technical Skills: Programming Languages, Frameworks, Tools, Cloud, Testing\n"
+                        "   - Military Experience Translation: Leadership, Problem-solving, Team Collaboration\n\n"
+                        
+                        "2. Portfolio Development:\n"
+                        "   - Clean code and documentation\n"
+                        "   - Version control and API integration\n"
+                        "   - Responsive design and performance\n"
+                        "   - Testing and TypeScript implementation\n"
+                        "   - Security and accessibility standards\n\n"
+                        
+                        "LEARNING PATHS:\n"
+                        "1. Fundamentals: HTML, CSS, JavaScript, Git\n"
+                        "2. Intermediate: TypeScript, React, Python\n"
+                        "3. Advanced: Next.js, FastAPI, Streamlit, AI/ML\n\n"
+                        
+                        "PROJECT FOCUS:\n"
+                        "1. Portfolio Projects: Personal website, APIs, Data visualization\n"
+                        "2. Technical Skills: Code quality, Testing, Security, Performance\n"
+                        "3. Career Materials: GitHub profile, Technical blog, Documentation\n\n"
+                        
+                        "Remember: Provide practical guidance for building technical skills and transitioning to software development careers. "
+                        "Focus on concrete examples and best practices."
                     )
                 })
                 
