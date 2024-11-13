@@ -4,7 +4,7 @@ import logging
 from typing import Dict, List
 from datetime import datetime
 from dotenv import load_dotenv
-import openai
+from openai import OpenAI
 import json
 import time
 import hashlib
