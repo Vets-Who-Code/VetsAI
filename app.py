@@ -57,9 +57,19 @@ st.markdown("""
         padding: 0.2em 0.4em;
         margin: 0px;
         border-radius: 0.25rem;
-        background: rgb(132, 143, 160);
+        background: rgb(--navy-blue);
         color: var(--white) !important;
         overflow-wrap: break-word;
+    }
+
+       /* Style chat input text color */
+    .stTextInput input, .stTextInput textarea {
+        color: white !important;
+    }
+    
+    /* Style placeholder text color */
+    .stTextInput input::placeholder, .stTextInput textarea::placeholder {
+        color: rgba(255, 255, 255, 0.6) !important;
     }
     </style>
 """, unsafe_allow_html=True)
