@@ -12,7 +12,7 @@ import hashlib
 # Configure page settings and styling
 st.set_page_config(
     page_title="VetsAI: Vets Who Code Assistant",
-    page_icon="🇺🇸",
+    page_icon="",
     layout="wide",
 )
 
