@@ -1,6 +1,6 @@
 import streamlit as st
 import os
-import logging
+from utils.logging_utils import setup_logging
 from typing import Dict, List
 from datetime import datetime
 from dotenv import load_dotenv
@@ -93,16 +93,7 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# Configure logging
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-    handlers=[
-        logging.FileHandler('vetsai.log'),
-        logging.StreamHandler()
-    ]
-)
-logger = logging.getLogger(__name__)
+logger = setup_logging()
 
 # Load environment variables
 load_dotenv()
