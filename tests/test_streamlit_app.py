@@ -153,7 +153,7 @@ def test_translate_military_code_not_found(mock_job_codes):
     assert "dev_path" in result["data"]
     assert isinstance(result["data"]["tech_focus"], list)
 
-@patch("openai.chat.completions.create")
+@patch("app.openai.ChatCompletion.create")
 def test_get_chat_response(mock_create):
     # Mock the OpenAI response
     mock_response = MagicMock()
@@ -162,8 +162,15 @@ def test_get_chat_response(mock_create):
 
     messages = [{"role": "user", "content": "Hello"}]
     response = get_chat_response(messages)
+
+    # Assert that the mock response is returned correctly
     assert response == "Test response"
-    mock_create.assert_called_once()
+
+    # Verify that the OpenAI API was called exactly once
+    mock_create.assert_called_once_with(
+        model="gpt-4",  # Replace with your model name if different
+        messages=messages
+    )
 
 def test_handle_command_mos(mock_job_codes):
     with patch("streamlit.session_state") as mock_session:
