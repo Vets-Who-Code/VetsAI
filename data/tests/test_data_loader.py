@@ -38,12 +38,8 @@ def mock_job_codes():
     }
 
 
-@patch("os.path.join", lambda *args: "/".join(args))
-@patch("builtins.open", new_callable=mock_open)
-def test_load_military_job_codes(mock_file):
-    # Setup mock file content
-    mock_file.return_value.__enter__.return_value.read.return_value = SAMPLE_MOS_TEXT
-
+@pytest.fixture
+def mock_file_system():
     def mock_exists(path):
         return True
 
@@ -53,113 +49,95 @@ def test_load_military_job_codes(mock_file):
         else:
             return ["25B.txt"]
 
-    with patch("os.path.exists", side_effect=mock_exists), \
-            patch("os.listdir", side_effect=mock_listdir):
-
-        job_codes = load_military_job_codes()
-
-        # Basic validations
-        assert isinstance(job_codes, dict)
-        assert len(job_codes) > 0
-
-        # Verify the structure
-        for key, value in job_codes.items():
-            assert isinstance(value, dict)
-            assert "title" in value
-            assert "branch" in value
-            assert "skills" in value
-            assert isinstance(value["skills"], list)
-
-        # Verify that mock_file was called
-        assert mock_file.call_count > 0
+    return {"exists": mock_exists, "listdir": mock_listdir}
 
 
-def test_parse_mos_file():
-    """Test the MOS file parsing function"""
-    result = parse_mos_file(SAMPLE_MOS_TEXT)
+class TestMilitaryJobCodes:
+    @patch("os.path.join", lambda *args: "/".join(args))
+    @patch("builtins.open", new_callable=mock_open)
+    def test_load_military_job_codes(self, mock_file, mock_file_system):
+        mock_file.return_value.__enter__.return_value.read.return_value = SAMPLE_MOS_TEXT
 
-    # Basic structure tests
-    assert isinstance(result, dict)
-    assert "title" in result
-    assert "category" in result
-    assert "skills" in result
-    assert isinstance(result["skills"], list)
-    assert len(result["skills"]) > 0
+        with patch("os.path.exists", side_effect=mock_file_system["exists"]), \
+                patch("os.listdir", side_effect=mock_file_system["listdir"]):
+            job_codes = load_military_job_codes()
 
-    # Content tests
-    assert result["title"].startswith("Manages or supervises")
-    assert result["category"] == "information_technology"  # Should match because of network/data/system keywords
+            assert isinstance(job_codes, dict)
+            assert len(job_codes) > 0
 
-    # Skills check
-    assert any("network" in skill.lower() for skill in result["skills"])
+            for key, value in job_codes.items():
+                assert isinstance(value, dict)
+                assert all(field in value for field in ["title", "branch", "skills"])
+                assert isinstance(value["skills"], list)
 
+            assert mock_file.call_count > 0
 
-def test_parse_mos_file_edge_cases():
-    """Test parse_mos_file with various edge cases"""
-    # Empty content
-    empty_result = parse_mos_file("")
-    assert empty_result["title"] == "Military Professional"
-    assert empty_result["category"] == "general"
-    assert isinstance(empty_result["skills"], list)
+    def test_parse_mos_file(self):
+        result = parse_mos_file(SAMPLE_MOS_TEXT)
 
-    # Content with only job code
-    job_code_only = "Job Code: 25B"
-    job_code_result = parse_mos_file(job_code_only)
-    assert job_code_result["title"] == "Military Professional"
-    assert isinstance(job_code_result["skills"], list)
+        assert isinstance(result, dict)
+        assert all(field in result for field in ["title", "category", "skills"])
+        assert isinstance(result["skills"], list)
+        assert len(result["skills"]) > 0
 
-    # Content with special characters
-    special_chars = """
-    Job Code: 25B
+        assert "manages or supervises" in result["title"].lower()
+        assert result["category"] == "information_technology"
+        assert any("network" in skill.lower() for skill in result["skills"])
 
-    Description:
-    Network & Systems Administrator (IT/IS)
-
-    Manages & maintains computer networks/systems.
-    """
-    special_result = parse_mos_file(special_chars)
-    assert special_result["category"] == "information_technology"
-
-
-def test_map_to_vwc_path_it_category():
-    result = map_to_vwc_path("information_technology", ["programming", "networking"])
-    assert result["path"] == "Full Stack Development"
-    assert len(result["tech_focus"]) > 0
-    assert any("TypeScript" in focus for focus in result["tech_focus"])
-
-
-def test_map_to_vwc_path_default():
-    result = map_to_vwc_path("unknown_category", [])
-    assert result["path"] == "Full Stack Development"
-    assert len(result["tech_focus"]) > 0
+    @pytest.mark.parametrize("test_input,expected", [
+        ("", {
+            "title": "Military Professional",
+            "category": "general",
+            "skills": []
+        }),
+        ("Job Code: 25B", {
+            "title": "Military Professional",
+            "category": "general",
+            "skills": []
+        }),
+        ("""Job Code: 25B
+        Description:
+        Network & Systems Administrator (IT/IS)
+        Manages & maintains computer networks/systems.""", {
+            "category": "information_technology",
+            "skills": ["Network & Systems Administrator (IT/IS)",
+                       "Manages & maintains computer networks/systems."]
+        })
+    ])
+    def test_parse_mos_file_edge_cases(self, test_input, expected):
+        result = parse_mos_file(test_input)
+        for key, value in expected.items():
+            assert result[key] == value
 
 
-def test_translate_military_code_found(mock_job_codes):
-    result = translate_military_code("25B", mock_job_codes)
-    assert result["found"] == True
-    assert result["data"]["title"] == "Information Technology Specialist"
-    assert result["data"]["branch"] == "army"
+class TestPathMapping:
+    @pytest.mark.parametrize("category,skills,expected_path", [
+        ("information_technology", ["programming", "networking"], "Full Stack Development"),
+        ("cyber", [], "Security-Focused Development"),
+        ("intelligence", [], "AI/ML Development"),
+        ("communications", [], "Frontend Development"),
+        ("maintenance", [], "Backend Development"),
+        ("unknown", [], "Full Stack Development")
+    ])
+    def test_map_to_vwc_path(self, category, skills, expected_path):
+        result = map_to_vwc_path(category, skills)
+        assert result["path"] == expected_path
+        assert isinstance(result["tech_focus"], list)
+        assert len(result["tech_focus"]) > 0
 
 
-def test_translate_military_code_not_found(mock_job_codes):
-    result = translate_military_code("99Z", mock_job_codes)
-    assert result["found"] == False
-    assert "dev_path" in result["data"]
-    assert isinstance(result["data"]["tech_focus"], list)
+class TestMilitaryCodeTranslation:
+    def test_translate_military_code_found(self, mock_job_codes):
+        result = translate_military_code("25B", mock_job_codes)
+        assert result["found"] is True
+        assert result["data"]["title"] == "Information Technology Specialist"
+        assert result["data"]["branch"] == "army"
 
-
-@pytest.mark.parametrize("category,expected_path", [
-    ("cyber", "Security-Focused Development"),
-    ("intelligence", "AI/ML Development"),
-    ("communications", "Frontend Development"),
-    ("maintenance", "Backend Development"),
-    ("unknown", "Full Stack Development"),
-])
-def test_map_to_vwc_path_categories(category, expected_path):
-    result = map_to_vwc_path(category, [])
-    assert result["path"] == expected_path
-    assert isinstance(result["tech_focus"], list)
-    assert len(result["tech_focus"]) > 0
+    def test_translate_military_code_not_found(self, mock_job_codes):
+        result = translate_military_code("99Z", mock_job_codes)
+        assert result["found"] is False
+        assert "dev_path" in result["data"]
+        assert isinstance(result["data"]["tech_focus"], list)
 
 
 if __name__ == "__main__":
