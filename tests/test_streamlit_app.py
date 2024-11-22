@@ -4,7 +4,6 @@ from pathlib import Path
 import pytest
 from unittest.mock import patch, mock_open, MagicMock, call
 import json
-import openai
 from datetime import datetime
 
 ROOT_DIR = Path(__file__).parent.parent
@@ -33,7 +32,7 @@ Manages or supervises a specific automated system or node in a data or communica
 @pytest.fixture
 def mock_job_codes():
     return {
-        "MOS_25B": {  # Added MOS_ prefix back
+        "MOS_25B": {
             "title": "Information Technology Specialist",
             "branch": "army",
             "category": "information_technology",
@@ -110,14 +109,13 @@ class TestMilitaryJobCodes:
         Network & Systems Administrator (IT/IS)
         Manages & maintains computer networks/systems.""", {
             "category": "information_technology",
-            "skills": None  # Changed from approx([]) to None
+            "skills": ["Network & Systems Administrator (IT/IS)", 
+                      "Manages & maintains computer networks/systems."]
         })
     ])
     def test_parse_mos_file_edge_cases(self, test_input, expected):
         result = parse_mos_file(test_input)
         for key, value in expected.items():
-            if value is None:  # Skip skills check if None
-                continue
             assert result[key] == value
 
 class TestPathMapping:
@@ -137,7 +135,7 @@ class TestPathMapping:
 
 class TestMilitaryCodeTranslation:
     def test_translate_military_code_found(self, mock_job_codes):
-        result = translate_military_code("MOS_25B", mock_job_codes)  # Added MOS_ prefix
+        result = translate_military_code("25B", mock_job_codes)
         assert result["found"] is True
         assert result["data"]["title"] == "Information Technology Specialist"
         assert result["data"]["branch"] == "army"
@@ -149,27 +147,37 @@ class TestMilitaryCodeTranslation:
         assert isinstance(result["data"]["tech_focus"], list)
 
 class TestChatFunctionality:
-    @patch('openai.ChatCompletion.create')
-    def test_get_chat_response(self, mock_create):
-        mock_response = MagicMock()
+    @patch('openai.OpenAI')
+    def test_get_chat_response(self, mock_openai):
+        mock_client = MagicMock()
+        mock_completion = MagicMock()
         mock_choice = MagicMock()
-        mock_choice.message.content = "Test response"
-        mock_response.choices = [mock_choice]
-        mock_create.return_value = mock_response
+        mock_msg = MagicMock()
+        
+        mock_msg.content = "Test response"
+        mock_choice.message = mock_msg
+        mock_completion.choices = [mock_choice]
+        
+        mock_client.chat.completions.create.return_value = mock_completion
+        mock_openai.return_value = mock_client
 
         messages = [{"role": "user", "content": "Hello"}]
-        response = get_chat_response(messages)
-
-        assert response == "Test response"
-        mock_create.assert_called_once_with(
-            model="gpt-4",
-            messages=messages
-        )
+        
+        with patch('app.client', mock_client):
+            response = get_chat_response(messages)
+            
+            assert response == "Test response"
+            mock_client.chat.completions.create.assert_called_once_with(
+                model="gpt-4",
+                messages=messages,
+                temperature=0.7,
+            )
 
     def test_handle_command_mos(self, mock_job_codes):
         with patch("streamlit.session_state", create=True) as mock_session:
-            mock_session.configure_mock(job_codes=mock_job_codes)
-            response = handle_command("/mos MOS_25B")  # Added MOS_ prefix
+            mock_session.job_codes = mock_job_codes
+            response = handle_command("/mos 25B")
+            
             assert response is not None
             assert "Information Technology Specialist" in response
             assert "VWC Development Path" in response
@@ -208,7 +216,7 @@ class TestDataManagement:
             "rating": 5,
             "feedback": "Great service!",
             "session_id": "test123",
-            "timestamp": datetime.now().isoformat()  # Added timestamp
+            "timestamp": datetime.now().isoformat()
         }
         
         save_feedback(feedback)
