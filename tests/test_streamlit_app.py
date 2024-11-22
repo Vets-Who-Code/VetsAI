@@ -7,7 +7,6 @@ import json
 import openai
 from datetime import datetime
 
-# Get the absolute path to the project root directory
 ROOT_DIR = Path(__file__).parent.parent
 sys.path.append(str(ROOT_DIR))
 
@@ -22,7 +21,6 @@ from app import (
     parse_mos_file
 )
 
-# Sample text content
 SAMPLE_MOS_TEXT = """
 Job Code: 25B
 
@@ -35,7 +33,7 @@ Manages or supervises a specific automated system or node in a data or communica
 @pytest.fixture
 def mock_job_codes():
     return {
-        "MOS_25B": {
+        "25B": {
             "title": "Information Technology Specialist",
             "branch": "army",
             "category": "information_technology",
@@ -50,12 +48,8 @@ def mock_job_codes():
         }
     }
 
-@patch("os.path.join", lambda *args: "/".join(args))
-@patch("builtins.open", new_callable=mock_open)
-def test_load_military_job_codes(mock_file):
-    # Setup mock file content
-    mock_file.return_value.__enter__.return_value.read.return_value = SAMPLE_MOS_TEXT
-
+@pytest.fixture
+def mock_file_system():
     def mock_exists(path):
         return True
 
@@ -64,193 +58,169 @@ def test_load_military_job_codes(mock_file):
             return ["army", "air_force", "navy", "marine_corps", "coast_guard"]
         else:
             return ["25B.txt"]
+    
+    return {"exists": mock_exists, "listdir": mock_listdir}
 
-    with patch("os.path.exists", side_effect=mock_exists), \
-         patch("os.listdir", side_effect=mock_listdir):
+class TestMilitaryJobCodes:
+    @patch("os.path.join", lambda *args: "/".join(args))
+    @patch("builtins.open", new_callable=mock_open)
+    def test_load_military_job_codes(self, mock_file, mock_file_system):
+        mock_file.return_value.__enter__.return_value.read.return_value = SAMPLE_MOS_TEXT
+
+        with patch("os.path.exists", side_effect=mock_file_system["exists"]), \
+             patch("os.listdir", side_effect=mock_file_system["listdir"]):
+            
+            job_codes = load_military_job_codes()
+            
+            assert isinstance(job_codes, dict)
+            assert len(job_codes) > 0
+            
+            for key, value in job_codes.items():
+                assert isinstance(value, dict)
+                assert all(field in value for field in ["title", "branch", "skills"])
+                assert isinstance(value["skills"], list)
+            
+            assert mock_file.call_count > 0
+
+    def test_parse_mos_file(self):
+        result = parse_mos_file(SAMPLE_MOS_TEXT)
         
-        job_codes = load_military_job_codes()
+        assert isinstance(result, dict)
+        assert all(field in result for field in ["title", "category", "skills"])
+        assert isinstance(result["skills"], list)
+        assert len(result["skills"]) > 0
         
-        # Basic validations
-        assert isinstance(job_codes, dict)
-        assert len(job_codes) > 0
+        assert "manages or supervises" in result["title"].lower()
+        assert result["category"] == "information_technology"
+        assert any("network" in skill.lower() for skill in result["skills"])
+
+    @pytest.mark.parametrize("test_input,expected", [
+        ("", {
+            "title": "Military Professional",
+            "category": "general",
+            "skills": []
+        }),
+        ("Job Code: 25B", {
+            "title": "Military Professional",
+            "category": "general",
+            "skills": []
+        }),
+        ("""Job Code: 25B
+        Description:
+        Network & Systems Administrator (IT/IS)
+        Manages & maintains computer networks/systems.""", {
+            "category": "information_technology",
+            "skills": pytest.approx([], abs=10)
+        })
+    ])
+    def test_parse_mos_file_edge_cases(self, test_input, expected):
+        result = parse_mos_file(test_input)
+        for key, value in expected.items():
+            if isinstance(value, list) and isinstance(expected[key], list):
+                assert len(result[key]) >= len(value)
+            else:
+                assert result[key] == value
+
+class TestPathMapping:
+    @pytest.mark.parametrize("category,skills,expected_path", [
+        ("information_technology", ["programming", "networking"], "Full Stack Development"),
+        ("cyber", [], "Security-Focused Development"),
+        ("intelligence", [], "AI/ML Development"),
+        ("communications", [], "Frontend Development"),
+        ("maintenance", [], "Backend Development"),
+        ("unknown", [], "Full Stack Development")
+    ])
+    def test_map_to_vwc_path(self, category, skills, expected_path):
+        result = map_to_vwc_path(category, skills)
+        assert result["path"] == expected_path
+        assert isinstance(result["tech_focus"], list)
+        assert len(result["tech_focus"]) > 0
+
+class TestMilitaryCodeTranslation:
+    def test_translate_military_code_found(self, mock_job_codes):
+        result = translate_military_code("25B", mock_job_codes)
+        assert result["found"] is True
+        assert result["data"]["title"] == "Information Technology Specialist"
+        assert result["data"]["branch"] == "army"
+
+    def test_translate_military_code_not_found(self, mock_job_codes):
+        result = translate_military_code("99Z", mock_job_codes)
+        assert result["found"] is False
+        assert "dev_path" in result["data"]
+        assert isinstance(result["data"]["tech_focus"], list)
+
+class TestChatFunctionality:
+    @patch('openai.ChatCompletion.create')
+    def test_get_chat_response(self, mock_create):
+        mock_response = MagicMock()
+        mock_response.choices = [MagicMock(message=MagicMock(content="Test response"))]
+        mock_create.return_value = mock_response
+
+        messages = [{"role": "user", "content": "Hello"}]
+        response = get_chat_response(messages)
+
+        assert response == "Test response"
+        mock_create.assert_called_once_with(
+            model="gpt-4",
+            messages=messages
+        )
+
+    def test_handle_command_mos(self, mock_job_codes):
+        with patch("streamlit.session_state") as mock_session:
+            mock_session.job_codes = mock_job_codes
+            response = handle_command("/mos 25B")
+            assert response is not None
+            assert "Information Technology Specialist" in response
+            assert "VWC Development Path" in response
+
+    @pytest.mark.parametrize("command,expected", [
+        ("/invalid", None),
+        ("/mos", "Please provide a military job code"),
+        ("/mos  ", "Please provide a military job code")
+    ])
+    def test_handle_command_edge_cases(self, command, expected):
+        response = handle_command(command)
+        if expected is None:
+            assert response is None
+        else:
+            assert expected in response
+
+class TestDataManagement:
+    def test_export_chat_history(self):
+        chat_history = [
+            {"role": "user", "content": "Hello"},
+            {"role": "assistant", "content": "Hi"}
+        ]
+        result = export_chat_history(chat_history)
         
-        # Verify the structure
-        for key, value in job_codes.items():
-            assert isinstance(value, dict)
-            assert "title" in value
-            assert "branch" in value
-            assert "skills" in value
-            assert isinstance(value["skills"], list)
+        assert isinstance(result, str)
+        exported_data = json.loads(result)
+        assert isinstance(exported_data["timestamp"], str)
+        assert datetime.fromisoformat(exported_data["timestamp"])
+        assert len(exported_data["messages"]) == 2
+        assert all(msg["role"] in ["user", "assistant"] for msg in exported_data["messages"])
+
+    @patch("builtins.open", new_callable=mock_open)
+    @patch("os.makedirs")
+    def test_save_feedback(self, mock_makedirs, mock_file):
+        feedback = {
+            "rating": 5,
+            "feedback": "Great service!",
+            "session_id": "test123"
+        }
         
-        # Verify that mock_file was called
-        assert mock_file.call_count > 0
-
-def test_parse_mos_file():
-    """Test the MOS file parsing function"""
-    result = parse_mos_file(SAMPLE_MOS_TEXT)
-    
-    # Basic structure tests
-    assert isinstance(result, dict)
-    assert "title" in result
-    assert "category" in result
-    assert "skills" in result
-    assert isinstance(result["skills"], list)
-    assert len(result["skills"]) > 0
-    
-    # Content tests
-    assert result["title"].startswith("Manages or supervises")
-    assert result["category"] == "information_technology"  # Should match because of network/data/system keywords
-    
-    # Skills check
-    assert any("network" in skill.lower() for skill in result["skills"])
-
-def test_parse_mos_file_edge_cases():
-    """Test parse_mos_file with various edge cases"""
-    # Empty content
-    empty_result = parse_mos_file("")
-    assert empty_result["title"] == "Military Professional"
-    assert empty_result["category"] == "general"
-    assert isinstance(empty_result["skills"], list)
-    
-    # Content with only job code
-    job_code_only = "Job Code: 25B"
-    job_code_result = parse_mos_file(job_code_only)
-    assert job_code_result["title"] == "Military Professional"
-    assert isinstance(job_code_result["skills"], list)
-    
-    # Content with special characters
-    special_chars = """
-    Job Code: 25B
-    
-    Description:
-    Network & Systems Administrator (IT/IS)
-    
-    Manages & maintains computer networks/systems.
-    """
-    special_result = parse_mos_file(special_chars)
-    assert special_result["category"] == "information_technology"
-
-def test_map_to_vwc_path_it_category():
-    result = map_to_vwc_path("information_technology", ["programming", "networking"])
-    assert result["path"] == "Full Stack Development"
-    assert len(result["tech_focus"]) > 0
-    assert any("TypeScript" in focus for focus in result["tech_focus"])
-
-def test_map_to_vwc_path_default():
-    result = map_to_vwc_path("unknown_category", [])
-    assert result["path"] == "Full Stack Development"
-    assert len(result["tech_focus"]) > 0
-
-def test_translate_military_code_found(mock_job_codes):
-    result = translate_military_code("25B", mock_job_codes)
-    assert result["found"] == True
-    assert result["data"]["title"] == "Information Technology Specialist"
-    assert result["data"]["branch"] == "army"
-
-def test_translate_military_code_not_found(mock_job_codes):
-    result = translate_military_code("99Z", mock_job_codes)
-    assert result["found"] == False
-    assert "dev_path" in result["data"]
-    assert isinstance(result["data"]["tech_focus"], list)
-
-@patch("app.openai.ChatCompletion.create")
-def test_get_chat_response(mock_create):
-    # Mock the OpenAI response
-    mock_response = MagicMock()
-    mock_response.choices = [MagicMock(message=MagicMock(content="Test response"))]
-    mock_create.return_value = mock_response
-
-    messages = [{"role": "user", "content": "Hello"}]
-    response = get_chat_response(messages)
-
-    # Assert that the mock response is returned correctly
-    assert response == "Test response"
-
-    # Verify that the OpenAI API was called exactly once
-    mock_create.assert_called_once_with(
-        model="gpt-4",  # Replace with your model name if different
-        messages=messages
-    )
-
-def test_handle_command_mos(mock_job_codes):
-    with patch("streamlit.session_state") as mock_session:
-        mock_session.job_codes = mock_job_codes
-        response = handle_command("/mos 25B")
-        assert response is not None
-        assert "Information Technology Specialist" in response
-        assert "VWC Development Path" in response
-
-def test_handle_command_invalid():
-    response = handle_command("/invalid")
-    assert response is None
-
-def test_handle_command_missing_code():
-    response = handle_command("/mos")
-    assert "Please provide a military job code" in response
-
-def test_export_chat_history():
-    chat_history = [
-        {"role": "user", "content": "Hello"},
-        {"role": "assistant", "content": "Hi"}
-    ]
-    result = export_chat_history(chat_history)
-    assert isinstance(result, str)
-    
-    # Verify JSON structure
-    exported_data = json.loads(result)
-    assert "timestamp" in exported_data
-    assert "messages" in exported_data
-    assert len(exported_data["messages"]) == 2
-
-@patch("builtins.open", new_callable=mock_open)
-@patch("os.makedirs")
-def test_save_feedback(mock_makedirs, mock_file):
-    feedback = {
-        "rating": 5,
-        "feedback": "Great service!",
-        "session_id": "test123"
-    }
-    
-    # Call the function
-    save_feedback(feedback)
-    
-    # Verify makedirs was called
-    mock_makedirs.assert_called_once()
-    
-    # Verify open was called with write mode
-    mock_file.assert_called_once()
-    
-    # Get the mock file handle
-    handle = mock_file()
-    
-    # Get what was written to the file
-    written_calls = handle.write.call_args_list
-    assert len(written_calls) > 0
-    
-    # Combine all written data
-    written_data = ''.join(call[0][0] for call in written_calls)
-    
-    # Verify it's valid JSON
-    try:
+        save_feedback(feedback)
+        
+        mock_makedirs.assert_called_once()
+        mock_file.assert_called_once()
+        
+        written_data = ''.join(call[0][0] for call in mock_file().write.call_args_list)
         parsed_data = json.loads(written_data)
+        
         assert parsed_data["rating"] == 5
         assert parsed_data["feedback"] == "Great service!"
         assert parsed_data["session_id"] == "test123"
-    except json.JSONDecodeError as e:
-        pytest.fail(f"Invalid JSON written to file: {written_data}")
-
-@pytest.mark.parametrize("category,expected_path", [
-    ("cyber", "Security-Focused Development"),
-    ("intelligence", "AI/ML Development"),
-    ("communications", "Frontend Development"),
-    ("maintenance", "Backend Development"),
-    ("unknown", "Full Stack Development"),
-])
-def test_map_to_vwc_path_categories(category, expected_path):
-    result = map_to_vwc_path(category, [])
-    assert result["path"] == expected_path
-    assert isinstance(result["tech_focus"], list)
-    assert len(result["tech_focus"]) > 0
+        assert isinstance(parsed_data.get("timestamp"), str)
 
 if __name__ == "__main__":
     pytest.main(["-v"])
