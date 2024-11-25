@@ -17,15 +17,17 @@ svg_content = '''
 </svg>
 '''
 
+
 def get_svg_base64(svg_content):
-   b64 = base64.b64encode(svg_content.encode('utf-8')).decode('utf-8')
-   return f"data:image/svg+xml;base64,{b64}"
+    b64 = base64.b64encode(svg_content.encode('utf-8')).decode('utf-8')
+    return f"data:image/svg+xml;base64,{b64}"
+
 
 # Configure the page with your brand colors
 st.set_page_config(
-   page_title="VetsAI: Vets Who Code Assistant",
-   page_icon=get_svg_base64(svg_content),
-   layout="wide"
+    page_title="VetsAI: Vets Who Code Assistant",
+    page_icon=get_svg_base64(svg_content),
+    layout="wide"
 )
 
 # Define VWC brand colors and add custom CSS
@@ -114,12 +116,13 @@ client = OpenAI(api_key=st.secrets["openai"]["OPENAI_API_KEY"])
 if not client.api_key:  # Changed from openai.api_key to client.api_key
     raise ValueError("OpenAI API key not found in Streamlit secrets.")
 
+
 def parse_mos_file(file_content: str) -> dict:
     """Parse military job code text file content into a structured dictionary."""
     lines = file_content.strip().split('\n')
     job_code, title, description = "", "", []
     parsing_description = False
-    
+
     for line in lines:
         line = line.strip()
         if not line:
@@ -130,32 +133,34 @@ def parse_mos_file(file_content: str) -> dict:
             parsing_description = True
         elif parsing_description:
             description.append(line)
-    
+
     for line in description:
         if line:
             title = line
             break
-    
+
     full_text = ' '.join(description).lower()
     category = "general"
     category_keywords = {
-        "information_technology": ["technology", "computer", "network", "data", "software", "hardware", "system", "database"],
+        "information_technology": ["technology", "computer", "network", "data", "software", "hardware", "system",
+                                   "database"],
         "communications": ["communications", "signal", "radio", "transmission", "telecom"],
         "intelligence": ["intelligence", "analysis", "surveillance", "reconnaissance"],
         "maintenance": ["maintenance", "repair", "technical", "equipment"],
         "cyber": ["cyber", "security", "information assurance", "cryptographic"]
     }
-    
+
     for cat, keywords in category_keywords.items():
         if any(keyword in full_text for keyword in keywords):
             category = cat
             break
-    
+
     return {
         "title": title or "Military Professional",
         "category": category,
         "skills": [line for line in description if line and len(line) > 10]
     }
+
 
 def load_military_job_codes() -> dict:
     base_path = "data/employment_transitions/job_codes"
@@ -167,7 +172,7 @@ def load_military_job_codes() -> dict:
         "navy": {"path": "navy", "prefix": "RATE"},
         "marine_corps": {"path": "marine_corps", "prefix": "MOS"}
     }
-    
+
     for branch, info in branches.items():
         branch_path = os.path.join(base_path, info["path"])
         if os.path.exists(branch_path):
@@ -191,6 +196,7 @@ def load_military_job_codes() -> dict:
                         continue
     return job_codes
 
+
 def map_to_vwc_path(category: str, skills: List[str]) -> dict:
     """Map military job categories and skills to VWC tech stack paths."""
     default_path = {
@@ -201,7 +207,7 @@ def map_to_vwc_path(category: str, skills: List[str]) -> dict:
             "Python with FastAPI/Django for backend"
         ]
     }
-    
+
     tech_paths = {
         "information_technology": {
             "path": "Full Stack Development",
@@ -244,7 +250,7 @@ def map_to_vwc_path(category: str, skills: List[str]) -> dict:
             ]
         }
     }
-    
+
     skill_keywords = {
         "programming": "software",
         "database": "data",
@@ -252,17 +258,18 @@ def map_to_vwc_path(category: str, skills: List[str]) -> dict:
         "security": "cyber",
         "analysis": "intelligence"
     }
-    
+
     if category.lower() in tech_paths:
         return tech_paths[category.lower()]
-    
+
     for skill in skills:
         skill_lower = skill.lower()
         for keyword, category in skill_keywords.items():
             if keyword in skill_lower and category in tech_paths:
                 return tech_paths[category]
-    
+
     return default_path
+
 
 def translate_military_code(code: str, job_codes: dict) -> dict:
     """Translate military code to VWC development path."""
@@ -271,9 +278,9 @@ def translate_military_code(code: str, job_codes: dict) -> dict:
     for prefix in prefixes:
         if code.startswith(prefix):
             code = code.replace(prefix, "").strip()
-    
+
     possible_codes = [f"MOS_{code}", f"AFSC_{code}", f"RATE_{code}"]
-    
+
     for possible_code in possible_codes:
         if possible_code in job_codes:
             job_data = job_codes[possible_code]
@@ -287,7 +294,7 @@ def translate_military_code(code: str, job_codes: dict) -> dict:
                     "skills": job_data.get('skills', [])
                 }
             }
-    
+
     return {
         "found": False,
         "data": {
@@ -307,6 +314,7 @@ def translate_military_code(code: str, job_codes: dict) -> dict:
         }
     }
 
+
 def get_chat_response(messages: List[Dict]) -> str:
     """Get response from OpenAI chat completion."""
     try:
@@ -320,6 +328,7 @@ def get_chat_response(messages: List[Dict]) -> str:
         logger.error(f"OpenAI API error: {e}")
         raise
 
+
 def export_chat_history(chat_history: List[Dict]) -> str:
     """Export chat history to JSON."""
     export_data = {
@@ -327,6 +336,7 @@ def export_chat_history(chat_history: List[Dict]) -> str:
         "messages": chat_history
     }
     return json.dumps(export_data, indent=2)
+
 
 def save_feedback(feedback: Dict):
     """Save user feedback to file."""
@@ -339,36 +349,38 @@ def save_feedback(feedback: Dict):
     with open(feedback_file, 'w') as f:
         json.dump(feedback, f, indent=2)
 
+
 def handle_command(command: str) -> str:
     """Handle special commands including MOS translation."""
     parts = command.lower().split()
     if not parts:
         return None
-        
+
     cmd = parts[0]
     if cmd in ['/mos', '/afsc', '/rate']:
         if len(parts) < 2:
             return "Please provide a military job code. Example: `/mos 25B`"
-            
+
         code = parts[1]
         translation = translate_military_code(code, st.session_state.job_codes)
         if translation['found']:
             return (
-                f"🎖️ **{translation['data']['title']}** ({translation['data']['branch']})\n\n"
-                f"💻 **VWC Development Path**: {translation['data']['dev_path']}\n\n"
-                "🔧 **Military Skills**:\n" +
-                "\n".join(f"- {skill}" for skill in translation['data']['skills']) +
-                "\n\n📚 **VWC Tech Focus**:\n" +
-                "\n".join(f"{i+1}. {focus}" for i, focus in enumerate(translation['data']['tech_focus']))
+                    f"🎖️ **{translation['data']['title']}** ({translation['data']['branch']})\n\n"
+                    f"💻 **VWC Development Path**: {translation['data']['dev_path']}\n\n"
+                    "🔧 **Military Skills**:\n" +
+                    "\n".join(f"- {skill}" for skill in translation['data']['skills']) +
+                    "\n\n📚 **VWC Tech Focus**:\n" +
+                    "\n".join(f"{i + 1}. {focus}" for i, focus in enumerate(translation['data']['tech_focus']))
             )
         else:
             return (
-                "I don't have that specific code in my database, but here's a recommended "
-                "VWC learning path based on general military experience:\n\n" +
-                "\n".join(f"{i+1}. {focus}" for i, focus in enumerate(translation['data']['tech_focus']))
+                    "I don't have that specific code in my database, but here's a recommended "
+                    "VWC learning path based on general military experience:\n\n" +
+                    "\n".join(f"{i + 1}. {focus}" for i, focus in enumerate(translation['data']['tech_focus']))
             )
-    
+
     return None
+
 
 def initialize_chat():
     """Initialize the chat with a VWC-focused welcome message."""
@@ -396,24 +408,25 @@ def initialize_chat():
     }
     return [welcome_message]
 
+
 def main():
     """Main application function."""
     st.title("🇺🇸 VetsAI: Vets Who Code Assistant")
-    
+
     # Initialize session
     if 'session_id' not in st.session_state:
         st.session_state.session_id = hashlib.md5(str(time.time()).encode()).hexdigest()
-    
+
     if 'job_codes' not in st.session_state:
         try:
             st.session_state.job_codes = load_military_job_codes()
         except Exception as e:
             logger.error(f"Error loading job codes: {e}")
             st.session_state.job_codes = {}
-    
+
     if 'messages' not in st.session_state:
         st.session_state.messages = initialize_chat()
-    
+
     # Sidebar with VWC tech stack resources
     with st.sidebar:
         st.markdown("""
@@ -481,7 +494,7 @@ def main():
                     "content": (
                         "You are a specialized AI assistant for Vets Who Code members, designed to provide clear, practical technical guidance "
                         "to veterans transitioning into software development careers.\n\n"
-                        
+
                         "CORE TECH STACK:\n"
                         "- Frontend: JavaScript, TypeScript, React, Next.js\n"
                         "- Styling: CSS, Tailwind CSS\n"
@@ -490,40 +503,40 @@ def main():
                         "- Advanced: AI/ML fundamentals\n"
                         "- Development Tools: Git, GitHub, VS Code\n"
                         "- Testing: Jest, Pytest\n\n"
-                        
+
                         "CAREER TRANSITION GUIDANCE:\n"
                         "1. Resume Development:\n"
                         "   - Technical Skills: Programming Languages, Frameworks, Tools, Cloud, Testing\n"
                         "   - Military Experience Translation: Leadership, Problem-solving, Team Collaboration\n\n"
-                        
+
                         "2. Portfolio Development:\n"
                         "   - Clean code and documentation\n"
                         "   - Version control and API integration\n"
                         "   - Responsive design and performance\n"
                         "   - Testing and TypeScript implementation\n"
                         "   - Security and accessibility standards\n\n"
-                        
+
                         "LEARNING PATHS:\n"
                         "1. Fundamentals: HTML, CSS, JavaScript, Git\n"
                         "2. Intermediate: TypeScript, React, Python\n"
                         "3. Advanced: Next.js, FastAPI, Streamlit, AI/ML\n\n"
-                        
+
                         "PROJECT FOCUS:\n"
                         "1. Portfolio Projects: Personal website, APIs, Data visualization\n"
                         "2. Technical Skills: Code quality, Testing, Security, Performance\n"
                         "3. Career Materials: GitHub profile, Technical blog, Documentation\n\n"
-                        
+
                         "Remember: Provide practical guidance for building technical skills and transitioning to software development careers. "
                         "Focus on concrete examples and best practices."
                     )
                 })
-                
-                response = get_chat_response(messages)
-                st.markdown(response)
-                st.session_state.messages.append({
-                    "role": "assistant",
-                    "content": response
-                })
+                with st.spinner("Building a response..."):
+                    response = get_chat_response(messages)
+                    st.markdown(response)
+                    st.session_state.messages.append({
+                        "role": "assistant",
+                        "content": response
+                    })
             except Exception as e:
                 st.error(f"Error generating response: {str(e)}")
 
@@ -546,6 +559,7 @@ def main():
             }
             save_feedback(feedback)
             st.success("Thank you for your feedback!")
+
 
 if __name__ == "__main__":
     main()
