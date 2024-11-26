@@ -12,18 +12,21 @@ VetsAI is an AI-powered virtual assistant designed to help veterans navigate emp
 ## Prerequisites
 
 To run this application, ensure you have the following installed:
+
 - Python 3.8 or later
 - A virtual environment (recommended)
 
 ## Installation
 
 1. **Clone the repository**:
+
    ```bash
    git clone <repository-url>
    cd <repository-directory>
    ```
 
 2. **Set up a virtual environment**:
+
    ```bash
    python -m venv venv
    source venv/bin/activate  # For macOS/Linux
@@ -31,13 +34,16 @@ To run this application, ensure you have the following installed:
    ```
 
 3. **Install dependencies**:
+
    ```bash
    pip install -r requirements.txt
    ```
 
 4. **Set up environment variables**:
+
    - Create a .env file in the root of your project.
    - Add your OpenAI API key to the .env file:
+
      ```
      OPENAI_API_KEY=your-openai-api-key
      ```
@@ -45,11 +51,13 @@ To run this application, ensure you have the following installed:
 ## Running the App
 
 1. **Run the Streamlit app**:
+
    ```bash
    streamlit run app.py
    ```
 
 2. **Access the app**:
+
    Open your web browser and navigate to http://localhost:8501.
 
 ## Usage
@@ -67,6 +75,7 @@ To run this application, ensure you have the following installed:
 ## Dependencies
 
 The following Python libraries are required to run this app:
+
 - `streamlit`: For the web interface.
 - `httpx`: To make HTTP requests to OpenAI's API.
 - `nest-asyncio`: To allow nested event loops for async operations.
