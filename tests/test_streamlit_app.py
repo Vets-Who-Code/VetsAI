@@ -147,6 +147,7 @@ class TestMilitaryCodeTranslation:
         assert isinstance(result["data"]["tech_focus"], list)
 
 class TestChatFunctionality:
+    @patch.dict(os.environ, {"OPENAI_API_KEY": "test_api_key"}) 
     @patch('openai.OpenAI')
     def test_get_chat_response(self, mock_openai):
         mock_client = MagicMock()
